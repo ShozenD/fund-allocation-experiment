@@ -1,0 +1,211 @@
+<html>
+
+<head>
+  <meta charset="uft-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <!--My allocations-->
+    <br>
+    <h2 align="left">My Allocations</h2>
+    <table class="table" onload="init()">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Non-profit Organization</th>
+          <th scope="col">About</th>
+          <th scope="col">Original Amount</th>
+          <th scope="col">New Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row" align="left">Reading Partners</th>
+          <td align="left">Commited to helping children become lifelong readers</td>
+          <td name="alloc" id="rp" align="center">5</td>
+          <td align="center"><input type="text" class="form-control new-alloc" id="rp" value=5 onchange="update()"></td>
+        </tr>
+        <tr>
+          <th scope="row" align="left">Human Health Project</th>
+          <td align="left">Assists individuals who are ill, along with their family, friends & practitioners</td>
+          <td name="alloc" id="hhp" align="center">5</td>
+          <td align="center"><input type="text" class="form-control new-alloc" id="hhp" value=5 onchange="update()"></td>
+        </tr>
+        <tr>
+          <th scope="row" align="left">Friends of the Urban Forest</th>
+          <td align="left">Promote an urban forest through community plantings, maintenance, education, and advocacy
+          </td>
+          <td name="alloc" id="fuf" align="center">5</td>
+          <td align="center"><input type="text" class="form-control new-alloc" id="fuf" value=5 onchange="update()"></td>
+        </tr>
+        <tr>
+          <th scope="row" align="left">National Alliance for Law Enforcement Support</th>
+          <td align="left">provides emotional and financial support to police families</td>
+          <td name="alloc" id="nales" align="center">4</td>
+          <td align="center"><input type="text" class="form-control new-alloc" id="nales" value=4 onchange="update()"></td>
+        </tr>
+        <tr>
+          <th scope="row" align="left">TRIP</th>
+          <td align="left">Promote transportation policies that help relieve traffic congestion</td>
+          <td name="alloc" id="trip" align="center">1</td>
+          <td align="center"><input type="text" class="form-control new-alloc" id="trip" value=1 onchange="update()"></td>
+        </tr>
+        <tr>
+          <th scope="row" align="left"></th>
+          <td align="left"></td>
+          <td align="center"><input class="btn btn-primary" value="Submit Allocation" onclick="submit()"></td>
+          <td align="center"><input class="btn btn-primary" value="Submit New Allocation" onclick="submit()"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!--Other Allocations-->
+  <br>
+  <div class="container">
+    <h3>Other Allocations</h3>
+    <div id="other_allocs">
+      <!--First Row-->
+      <div class="row">
+        <div class="col-sm alloc-col">
+          <h4 class="subjectNr">Subject No: 1</h4>
+          <table class="table alloc-table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Non-profit Organization</th>
+                <th scope="col">Their Budget</th>
+                <th scope="col">Your Budget</th>
+                <th scope="col">Absolute Difference</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Reading Partners</th>
+                <td class="otheralloc" id="rp">4</td>
+                <td class="myalloc" id="rp">5</td>
+                <td class="diffalloc" id="rp">1</td>
+              </tr>
+              <tr>
+                <th scope="row">Human Health Project</th>
+                <td class="otheralloc" id="hhp">2</td>
+                <td class="myalloc" id="hhp">3</td>
+                <td class="diffalloc" id="hhp">1</td>
+              </tr>
+              <tr>
+                <th scope="row">Friends of the Urban Forest</th>
+                <td class="otheralloc" id="fuf">3</td>
+                <td class="myalloc" id="fuf">2</td>
+                <td class="diffalloc" id="fuf">1</td>
+              </tr>
+              <tr>
+                <th scope="row">National Alliance for Law Enforcement Support</th>
+                <td class="otheralloc" id="nales">2</td>
+                <td class="myalloc" id="nales">6</td>
+                <td class="diffalloc" id="nales">4</td>
+              </tr>
+              <tr>
+                <th scope="row">TRIP</th>
+                <td class="otheralloc" id="trip">3</td>
+                <td class="myalloc" id="trip">1</td>
+                <td class="diffalloc" id="trip">2</td>
+              </tr>
+              <tr>
+                <th scope="row">Total</th>
+                <td id="otheralloc_tot">20</td>
+                <td id="myalloc_tot">20</td>
+                <td id="diffalloc_tot">12</td>
+              </tr>
+              <tr>
+                <th scope="row">Your Earnings</th>
+                <td id="earnings">$8 ($20 - $12)</td>
+                <td></td>
+                <td><button type="button" class="btn btn-primary btn" onclick="submit">Submit</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--Second Column-->
+        <div class="col-sm">
+          <h4>Subject No: 2</h4>
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Non-profit Organization</th>
+                <th scope="col">Their Budget</th>
+                <th scope="col">Your Budget</th>
+                <th scope="col">Absolute Difference</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Reading Partners</th>
+                <td>4</td>
+                <td>5</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <th scope="row">Human Health Project</th>
+                <td>2</td>
+                <td>3</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <th scope="row">Friends of the Urban Forest</th>
+                <td>3</td>
+                <td>2</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <th scope="row">National Alliance for Law Enforcement Support</th>
+                <td>2</td>
+                <td>6</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <th scope="row">TRIP</th>
+                <td>3</td>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <th scope="row">Total</th>
+                <td>$20</td>
+                <td>$20</td>
+                <td>$12</td>
+              </tr>
+              <tr>
+                <th scope="row">Your Earnings</th>
+                <td>$8 ($20 - $12)</td>
+                <td></td>
+                <td><button type="button" class="btn btn-primary" onclick="submit()">Submit</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!--Second Row-->
+      <div class="row alloc-row">
+        <div class="col-sm"></div>
+        <div class="col-sm"></div>
+      </div>
+      <!--Third Row-->
+      <div class="row alloc-row">
+        <div class="col-sm"></div>
+        <div class="col-sm"></div>
+      </div>
+      <!--Fourth Row-->
+      <div class="row alloc-row">
+        <div class="col-sm"></div>
+        <div class="col-sm"></div>
+      </div>
+      <!--Fifth Row-->
+      <div class="row alloc-row">
+        <div class="col-sm"></div>
+        <div class="col-sm"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
