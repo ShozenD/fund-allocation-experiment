@@ -36,5 +36,3 @@ class Allocation{
     return diff_rp + diff_hhp + diff_fuf + diff_nales + diff_trip; 
   }
 }
-
-export { Allocation };
