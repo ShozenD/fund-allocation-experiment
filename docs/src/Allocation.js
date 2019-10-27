@@ -20,12 +20,20 @@ class Allocation{
   }
   
   findTotal(){ //finds the sum of all elements
-      var total = this.rp + this.hhp + this.fuf + this.nales + this.trip;
-      return total;
+      return this.rp + this.hhp + this.fuf + this.nales + this.trip;
   }
   
   findDiff(key, value){ //finds the absolute difference between given value
       return Math.abs(this[key] - value);
+  }
+
+  findTotalDiff(otherAlloc){//findes the total difference between another allocation
+    var diff_rp = Math.abs( otherAlloc.rp - this.rp );
+    var diff_hhp = Math.abs( otherAlloc.hhp - this.rp );
+    var diff_fuf = Math.abs( otherAlloc.fuf - this.fuf );
+    var diff_nales = Math.abs( otherAlloc.nales - this.nales );
+    var diff_trip = Math.abs( otherAlloc.trip - this.trip );
+    return diff_rp + diff_hhp + diff_fuf + diff_nales + diff_trip; 
   }
 }
 
