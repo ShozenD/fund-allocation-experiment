@@ -28,3 +28,4 @@ class Allocation{
       return Math.abs(this[key] - value);
   }
 }
+
