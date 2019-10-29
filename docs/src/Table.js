@@ -90,7 +90,7 @@ function mainTable(myAlloc) {
   } else { total += '</tr>' }
 
   // row for submission buttons (leaders only)
-  var submit = '<tr><th scope="row" align="left"></th><td align="left"></td><td align="center"><input class="btn btn-primary" value="Submit Allocation" onclick="submit(0)"></td><td align="center"><input class="btn btn-primary" value="Submit New Allocation" onclick="submit(1)"></td></tr>'
+  var submit = '<tr><th scope="row" align="left"></th><td align="left"></td><td align="center"><input class="btn btn-primary" value="Submit Allocation" onclick="submitAlloc(0)"></td><td align="center"><input class="btn btn-primary" value="Submit New Allocation" onclick="submitAlloc(1)"></td></tr>'
 
   // <tbody> element
   var tbody = rp + hhp + fuf + nales + trip + total
