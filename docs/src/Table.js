@@ -58,7 +58,7 @@ main_table = function( myAlloc ) {
   //<tp> element for Human Health Project
   var hhp = '<tr><th scope="row" align="left">Human Health Project</th><td align="left">Assists individuals who are ill, along with their family, friends & practitioners</td><td name="alloc" id="hhp" align="center">' + myAlloc.hhp + '</td>';
   if ( myAlloc.subjectNr == 1 ) {
-    hhp += '<td align="center"><input type="text" class="form-control new-alloc" id="hhp" value=' + myAlloc.hhp + 'onchange="update()"></td></tr>';
+    hhp += '<td align="center"><input type="text" class="form-control new-alloc" id="hhp" value=' + myAlloc.hhp + ' onchange="update()"></td></tr>';
   } else { hhp += '</tr>' }
   
   //<tp> element for Friends of urban forest
