@@ -41,10 +41,16 @@ function comparisonTable(myAlloc, otherAlloc) {
 
 // Displays the main allocation table
 function mainTable(myAlloc) {
+  var leader = false
+
+  if (myAlloc.subjectNr === 1) {
+    leader = true
+  }
+
   // <thead> element
   var thead = '<thead class="thead-dark"> <tr> <th scope="col">Non-profit Organization</th> <th scope="col">About</th> <th scope="col">Original Amount</th>'
-  if (myAlloc.subejctNr === 1) {
-    thead = thead + '<th scope="col">New Amount</th></tr></thead>'
+  if (leader) {
+    thead += '<th scope="col">New Amount</th></tr></thead>'
   } else { thead += '</tr></thead>' }
 
   // <tr> element for Reading Partners
