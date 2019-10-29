@@ -5,13 +5,13 @@ var memberTable = '<h4 class="subjectNr">1</h4><table class="table alloc-table">
 
 //Allocation table to compare with other members and to submit(for leader)
 comparison_table = function(myAlloc, otherAlloc) {
-  var diff_rp = myAlloc.rp - otherAlloc.rp;
-  var diff_hhp = myAlloc.hhp - otherAlloc.hhp;
-  var diff_fuf = myAlloc.fuf - otherAlloc.fuf;
-  var diff_nales = myAlloc.nales - otherAlloc.nales;
-  var diff_trip = myAlloc.trip - otherAlloc.trip;
-  var diff_total = myAlloc.findTotalDiff(otherAlloc);
-  var earnings = myAlloc.findTotal() - diff_total;
+  var diff_rp = Math.abs(myAlloc.rp - otherAlloc.rp);
+  var diff_hhp = Math.abs(myAlloc.hhp - otherAlloc.hhp);
+  var diff_fuf = Math.abs(myAlloc.fuf - otherAlloc.fuf);
+  var diff_nales = Math.abs(myAlloc.nales - otherAlloc.nales);
+  var diff_trip = Math.abs(myAlloc.trip - otherAlloc.trip);
+  var diff_total = Math.abs(myAlloc.findTotalDiff(otherAlloc));
+  var earnings = Math.abs(myAlloc.findTotal() - diff_total);
 
   //HTML
   var title = '<h4 class="subjectNr">' + otherAlloc.subjectNr + '</h4><table class="table alloc-table">';
