@@ -10,8 +10,8 @@ comparison_table = function(myAlloc, otherAlloc) {
   var diff_fuf = myAlloc.fuf - otherAlloc.fuf;
   var diff_nales = myAlloc.nales - otherAlloc.nales;
   var diff_trip = myAlloc.trip - otherAlloc.trip;
-  var diff_total = myAlloc.getTotalDiff(otherAlloc);
-  var earnings = myAlloc.getTotal() - diff_total;
+  var diff_total = myAlloc.findTotalDiff(otherAlloc);
+  var earnings = myAlloc.findTotal() - diff_total;
 
   //HTML
   var title = '<h4 class="subjectNr">' + otherAlloc.subjectNr + '</h4><table class="table alloc-table">';
