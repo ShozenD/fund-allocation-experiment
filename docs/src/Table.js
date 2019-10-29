@@ -41,7 +41,7 @@ function comparisonTable(myAlloc, otherAlloc) {
 
 // Displays the main allocation table
 function mainTable(myAlloc) {
-  var leader = false
+  var leader = true
 
   if (myAlloc.subjectNr === 1) {
     leader = true
