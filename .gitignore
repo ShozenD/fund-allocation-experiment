@@ -1,0 +1,6 @@
+# Don't track content of these folders
+docs/src/node_modules
+docs/src/.vscode
+docs/src/.eslintrc.json
+docs/src/package.json
+docs/src/package-lock.json
