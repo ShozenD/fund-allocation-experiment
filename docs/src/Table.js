@@ -52,7 +52,7 @@ main_table = function( myAlloc ) {
   //<tr> element for Reading Partners
   var rp = '<tr><th scope="row" align="left">Reading Partners</th><td align="left">Commited to helping children become lifelong readers</td><td name="alloc" id="rp" align="center">' + myAlloc.rp + '</td>';
   if( myAlloc.subejctNr == 1 ) {
-    rp += '<td align="center"><input type="text" class="form-control new-alloc" id="rp" value=' + myAlloc.rp + 'onchange="update()"></td></tr>';
+    rp += '<td align="center"><input type="text" class="form-control new-alloc" id="rp" value=' + myAlloc.rp + ' onchange="update()"></td></tr>';
   } else { rp += '</tr>'}
 
   //<tp> element for Human Health Project
@@ -64,19 +64,19 @@ main_table = function( myAlloc ) {
   //<tp> element for Friends of urban forest
   var fuf = '<tr><th scope="row" align="left">Friends of the Urban Forest</th><td align="left">Promote an urban forest through community plantings, maintenance, education, and advocacy</td><td name="alloc" id="hhp" align="center">' + myAlloc.fuf + '</td>';;
   if ( myAlloc.subejctNr == 1 ) {
-    fuf += '<td align="center"><input type="text" class="form-control new-alloc" id="fuf" value=' + myAlloc.fuf + 'onchange="update()"></td></tr>';
+    fuf += '<td align="center"><input type="text" class="form-control new-alloc" id="fuf" value=' + myAlloc.fuf + ' onchange="update()"></td></tr>';
   } else { fuf += '</tr>' }
 
   //<tp> element for National Alliance for Law Enforcement Support
   var nales = '<tr><th scope="row" align="left">National Allicance for Law Enforcement Support</th><td align="left">Provides emotional and financial support to police families</td><td name="alloc" id="nales" align="center">' + myAlloc.nales + '</td>';
   if ( myAlloc.subjectNr == 1 ) {
-    nales += '<td align="center"><input type="text" class="form-control new-alloc" id="nales" value=' + myAlloc.nales + 'onchange="update()"></td></tr>';
+    nales += '<td align="center"><input type="text" class="form-control new-alloc" id="nales" value=' + myAlloc.nales + ' onchange="update()"></td></tr>';
   } else { nales += '</tr>' }
 
   //<tp> element for TRIP
   var trip = '<tr><th scope="row" align="left">TRIP</th><td align="left">Promote transportation policies that help relieve traffic congestion</td><td name="alloc" id="trip" align="center">' + myAlloc.trip + '</td>';
   if ( myAlloc.subjectNr == 1 ) {
-    trip += '<td align="center"><input type="text" class="form-control new-alloc" id="trip" value=' + myAlloc.trip + 'onchange="update()"></td></tr>';
+    trip += '<td align="center"><input type="text" class="form-control new-alloc" id="trip" value=' + myAlloc.trip + ' onchange="update()"></td></tr>';
   } else { trip += '</tr>' }
 
   //<tp> element for total
