@@ -7,13 +7,13 @@ function comparisonTable(myAlloc, otherAlloc) {
   var diffFuf = Math.abs(myAlloc.fuf - otherAlloc.fuf)
   var diffNales = Math.abs(myAlloc.nales - otherAlloc.nales)
   var diffTrip = Math.abs(myAlloc.trip - otherAlloc.trip)
-  var diffTotal = Math.abs(myAlloc.findTotalDiff(otherAlloc))
-  var earnings = Math.abs(myAlloc.findTotal() - diffTotal)
+  var diffTotal = myAlloc.findTotalDiff(otherAlloc)
+  var earnings = myAlloc.findTotal() - diffTotal
 
   // HTML
   var title = '<h4 class="subjectNr">' + 'No: ' + otherAlloc.subjectNr + '</h4><table class="table alloc-table">'
 
-  var thead = '<thead class="bg-info"><tr><th scope="col">Non-profit Organization</th><th scope="col">Their Budget</th><th scope="col">Your Budget</th><th scope="col">Absolute Difference</th></tr></thead>'
+  var thead = '<thead class="thead-dark"><tr><th scope="col">Non-profit Organization</th><th scope="col">Their Budget</th><th scope="col">Your Budget</th><th scope="col">Absolute Difference</th></tr></thead>'
 
   var rp = '<tr><th scope="row" align="left">Reading Partners</th><td class="otheralloc" id="rp">' + otherAlloc.rp + '</td><td class="myalloc" id="rp">' + myAlloc.rp + '</td><td class="diffalloc" id="rp">' + diffRp + '</td></tr>'
 
@@ -28,7 +28,7 @@ function comparisonTable(myAlloc, otherAlloc) {
 
   // create submit button
   var submitButton = '<p></p>'
-  if (myAlloc.subejctNr === 1) {
+  if (myAlloc.subjectNr === 1) {
     submitButton = '<button type="button" class="btn btn-primary btn" onclick="submit(' + otherAlloc.subjectNr + ')">Submit</button>'
   }
 
