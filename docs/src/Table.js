@@ -52,10 +52,9 @@ main_table = function( myAlloc ) {
   
   //<tr> element for Reading Partners
   var rp = '<tr><th scope="row" align="left">Reading Partners</th><td align="left">Commited to helping children become lifelong readers</td><td name="alloc" id="rp" align="center">' + myAlloc.rp + '</td>';
-  if( myAlloc.subejctNr == 1 ) {
-    console.log('Hey!!!');
-    rp += '<td align="center"><input type="text" class="form-control new-alloc" id="rp" value=' + myAlloc.rp + ' onchange="update()"></td></tr>';
-  } else { rp += '</tr>'}
+  if ( myAlloc.subjectNr == 1 ) {
+    hhp += '<td align="center"><input type="text" class="form-control new-alloc" id="hhp" value=' + myAlloc.hhp + ' onchange="update()"></td></tr>';
+  } else { hhp += '</tr>' }
 
   //<tp> element for Human Health Project
   var hhp = '<tr><th scope="row" align="left">Human Health Project</th><td align="left">Assists individuals who are ill, along with their family, friends & practitioners</td><td name="alloc" id="hhp" align="center">' + myAlloc.hhp + '</td>';
