@@ -29,7 +29,7 @@ class Allocation {
 
   findTotalDiff (otherAlloc) { // findes the total difference between another allocation
     var diffRp = Math.abs(otherAlloc.rp - this.rp)
-    var diffHhp = Math.abs(otherAlloc.hhp - this.rp)
+    var diffHhp = Math.abs(otherAlloc.hhp - this.hhp)
     var diffFuf = Math.abs(otherAlloc.fuf - this.fuf)
     var diffNales = Math.abs(otherAlloc.nales - this.nales)
     var diffTrip = Math.abs(otherAlloc.trip - this.trip)
