@@ -44,7 +44,7 @@ function mainTable(myAlloc) {
   // <thead> element
   var thead = '<thead class="thead-dark"> <tr> <th scope="col">Non-profit Organization</th> <th scope="col">About</th> <th scope="col">Original Amount</th>'
   if (myAlloc.subejctNr === 1) {
-    thead += '<th scope="col">New Amount</th></tr></thead>'
+    thead = thead + '<th scope="col">New Amount</th></tr></thead>'
   } else { thead += '</tr></thead>' }
 
   // <tr> element for Reading Partners
