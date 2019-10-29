@@ -46,12 +46,14 @@ main_table = function( myAlloc ) {
   //<thead> element
   var thead = '<thead class="thead-dark"> <tr> <th scope="col">Non-profit Organization</th> <th scope="col">About</th> <th scope="col">Original Amount</th>'; 
   if ( myAlloc.subejctNr == 1 ){
+    console.log('Hey!');
     thead += '<th scope="col">New Amount</th></tr></thead>';
   } else { thead += '</tr></thead>'; }
   
   //<tr> element for Reading Partners
   var rp = '<tr><th scope="row" align="left">Reading Partners</th><td align="left">Commited to helping children become lifelong readers</td><td name="alloc" id="rp" align="center">' + myAlloc.rp + '</td>';
   if( myAlloc.subejctNr == 1 ) {
+    console.log('Hey!!!');
     rp += '<td align="center"><input type="text" class="form-control new-alloc" id="rp" value=' + myAlloc.rp + ' onchange="update()"></td></tr>';
   } else { rp += '</tr>'}
 
