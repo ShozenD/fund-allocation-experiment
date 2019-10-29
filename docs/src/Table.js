@@ -29,7 +29,7 @@ function comparisonTable(myAlloc, otherAlloc) {
   // create submit button
   var submitButton = '<p></p>'
   if (myAlloc.subjectNr === 1) {
-    submitButton = '<button type="button" class="btn btn-primary btn" onclick="submit(' + otherAlloc.subjectNr + ')">Submit</button>'
+    submitButton = '<button type="button" class="btn btn-primary btn" onclick="submitAlloc(' + otherAlloc.subjectNr + ')">Submit</button>'
   }
 
   var earn = '<tr><th scope="row">Your Earnings</th><td id="earnings">' + earnings + '</td><td></td><td>' + submitButton + '</td></tr>'
