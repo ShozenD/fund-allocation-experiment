@@ -28,7 +28,7 @@ comparison_table = function( myAlloc, otherAlloc ) {
   var total = '<tr><th scope="row">Total</th><td id="otheralloc_tot">' + otherAlloc.findTotal() + '</td><td id="myalloc_tot">' + myAlloc.findTotal() + '</td><td id="diffalloc_tot">' + diff_total + '</td></tr>';
 
   // create submit button
-  var submit_button = <p></p>;
+  var submit_button = '<p></p>';
   if( myAlloc.subejctNr == 1 ){
     submit_button = '<button type="button" class="btn btn-primary btn" onclick="submit('+ otherAlloc.subjectNr +')">Submit</button>';
   }
@@ -40,6 +40,7 @@ comparison_table = function( myAlloc, otherAlloc ) {
   return(title + thead + tbody);
 }
 
+////Displays the main allocation table
 main_table = function( myAlloc ) {
   
   //<thead> element
