@@ -116,6 +116,7 @@ function voteTable(myAlloc, leaderAlloc) {
 
   var thead = '<thead class="thead-dark"><tr><th scope="col">Non-profit Organization</th><th scope="col">Leader`s Choice</th><th scope="col">Your Allocation</th><th scope="col">Difference</th></tr></thead>'
 
+/*
   var rp = '<tr><th scope="row" align="left">Reading Partners</th><td class="leader-alloc" id="rp" align="center">' + leaderAlloc.rp + '</td><td class="my-alloc" id="rp" align="center">' + myAlloc.rp + '</td><td class="diff-alloc" id="rp" align="center">' + diffRp + '</td></tr>'
 
   var hhp = '<tr><th scope="row" align="left">Human Health Partners</th><td class="leader-alloc" id="hhp" align="center">' + leaderAlloc.hhp + '</td><td class="my-alloc" id="hhp" align="center">' + myAlloc.hhp + '</td><td class="diff-alloc" id="hhp" align="center">' + diffHhp + '</td></tr>'
@@ -131,6 +132,6 @@ function voteTable(myAlloc, leaderAlloc) {
   var earn = '<tr><th scope="row">Your Earnings</th><td id="earnings">' + earnings + '</td><td></td><td></td></tr>'
 
   var tbody = '<tbody>' + rp + hhp + fuf + nales + trip + total + earn + '</tbody>'
-
-  return (title + thead + tbody)
+*/
+  return (title + thead)
 }
