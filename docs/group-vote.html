@@ -1,0 +1,73 @@
+<!doctype html>
+
+</html>
+
+<head>
+  <meta charset="uft-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container my-allocation">
+    <!--My allocations-->
+    <br>
+    <h2 align="left">Allocation Vote</h2>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Non-profit Organization</th>
+          <th scope="col">Leader's Choice</th>
+          <th scope="col">Your Allocation</th>
+          <th scope="col">Difference</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row" align="left">Reading Partners</th>
+          <td class="leader-alloc" id="rp" align="center">5</td>
+          <td class="my-alloc" id="rp" align="center">5</td>
+          <td class="diff-alloc" id="rp" align="center">0</td>
+        </tr>
+        <tr>
+          <th scope="row" align="left">Human Health Project</th>
+          <td class="leader-alloc" id="hhp" align="center">5</td>
+          <td class="my-alloc" id="hhp" align="center">5</td>
+          <td class="diff-alloc" id="hhp" align="center">0</td>
+        </tr>
+        <tr>
+          <th scope="row" align="left">Friends of the Urban Forest</th>
+          <td class="leader-alloc" id="fuf" align="center">5</td>
+          <td class="my-alloc" id="fuf" align="center">5</td>
+          <td class="diff-alloc" id="fuf" align="center">0</td>
+        </tr>
+        <tr>
+          <th scope="row" align="left">National Alliance for Law Enforcement Support</th>
+          <td class="leader-alloc" id="nales" align="center">5</td>
+          <td class="my-alloc" id="nales" align="center">5</td>
+          <td class="diff-alloc" id="nales" align="center">0</td>
+        </tr>
+        <tr>
+          <th scope="row" align="left">TRIP</th>
+          <td class="leader-alloc" id="trip" align="center">5</td>
+          <td class="my-alloc" id="trip" align="center">5</td>
+          <td class="diff-alloc" id="trip" align="center">0</td>
+        </tr>
+        <tr>
+          <th scope="row" align="left">Total</th>
+          <td id="leader-alloc-total" align="center">20</td>
+          <td id="my-alloc-total" align="center">20</td>
+          <td id="diff-total" align="center">0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="container voting-buttons">
+    <div class="row justify-content-md-center">
+      <div class="col-lg-auto" align="center"><button type="button" class="btn btn-outline-primary" id="vote-agree">Agree</button></div>
+      <div class="col-lg-auto" align="center"><button type="button" class="btn btn-outline-danger" id="vote-disagree">Disagree</button></div>
+    </div>
+  </div>
+</body>
+
+</html>
