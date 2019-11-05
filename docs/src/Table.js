@@ -132,7 +132,7 @@ function voteTable(myAlloc, leaderAlloc) {
 
   var tbody = '<tbody>' + rp + hhp + fuf + nales + trip + total + earn + '</tbody>'
 
-  var table = '<table>' + thead + tbody + '</table>'
+  var table = '<table class="table">' + thead + tbody + '</table>'
 
   return (title + table)
 }
