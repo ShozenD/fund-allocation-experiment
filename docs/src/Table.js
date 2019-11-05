@@ -126,9 +126,9 @@ function voteTable(myAlloc, leaderAlloc) {
 
   var trip = '<tr><th scope="row" align="left">TRIP</th><td class="leader-alloc" id="trip" align="center">' + leaderAlloc.trip + '</td><td class="my-alloc" id="trip" align="center">' + myAlloc.trip + '</td><td class="diff-alloc" id="trip" align="center">' + diffTrip + '</td></tr>'
 
-  var total = '<tr><th scope="row" align="left">Total</th><td class="leader-alloc-total" align="center">' + leaderAlloc.findTotal() + '</td><td id="my-alloc-total" align="center">' + myAlloc.findTotal() + '</td><td class="diff-alloc-total">' + diffTotal + '</td></tr>'
+  var total = '<tr><th scope="row" align="left">Total</th><td class="leader-alloc-total" align="center">' + leaderAlloc.findTotal() + '</td><td id="my-alloc-total" align="center">' + myAlloc.findTotal() + '</td><td class="diff-alloc-total" align="center">' + diffTotal + '</td></tr>'
 
-  var earn = '<tr><th scope="row" align="center">Your Earnings</th><td id="earnings">' + earnings + '</td><td></td><td></td></tr>'
+  var earn = '<tr><th scope="row" align="center">Your Earnings</th><td id="earnings" align="center">' + earnings + '</td><td></td><td></td></tr>'
 
   var tbody = '<tbody>' + rp + hhp + fuf + nales + trip + total + earn + '</tbody>'
 
