@@ -112,7 +112,7 @@ function voteTable(myAlloc, leaderAlloc) {
   var earnings = myAlloc.findTotal() - diffTotal
 
   // HTML
-  var title='<br><h2 align="left">Allocation Vote</h2>'
+  var title = '<br><h2 align="left">Allocation Vote</h2>'
 
   var thead = '<thead class="thead-dark"><tr><th scope="col">Non-profit Organization</th><th scope="col">Leader`s Choice</th><th scope="col">Your Allocation</th><th scope="col">Difference</th></tr></thead>'
 
