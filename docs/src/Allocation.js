@@ -27,7 +27,7 @@ class Allocation {
     return Math.abs(this[key] - value)
   }
 
-  findTotalDiff (otherAlloc) { // findes the total difference between another allocation
+  findTotalDiff (otherAlloc) { // findes the total absolute difference between another allocation
     var diffRp = Math.abs(otherAlloc.rp - this.rp)
     var diffHhp = Math.abs(otherAlloc.hhp - this.hhp)
     var diffFuf = Math.abs(otherAlloc.fuf - this.fuf)
