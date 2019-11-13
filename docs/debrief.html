@@ -22,7 +22,7 @@
           <label class="form-check-label" for="q1Radio2">Somewhat Satisfied</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" name="q1" type="radio" id="q1Radio3" value=3>
+          <input class="form-check-input" name="q1" type="radio" id="q1Radio3" value=3 checked>
           <label class="form-check-label" for="q1Radio3">Neither Satisfied nor Unsatisfied</label>
         </div>
         <div class="form-check">
@@ -50,7 +50,7 @@
           <label class="form-check-label" for="q2Radio2">Somewhat Competent</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" name="q2" type="radio" id="q2Radio3" value=3>
+          <input class="form-check-input" name="q2" type="radio" id="q2Radio3" value=3 checked>
           <label class="form-check-label" for="q2Radio3">Neither Competent nor Incompetent</label>
         </div>
         <div class="form-check">
@@ -78,7 +78,7 @@
           <label class="form-check-label" for="q3Radio2">Very Important</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" name="q3" type="radio" id="q3Radio3" value=3>
+          <input class="form-check-input" name="q3" type="radio" id="q3Radio3" value=3 checked>
           <label class="form-check-label" for="q3Radio3">Moderately Important</label>
         </div>
         <div class="form-check">
@@ -106,7 +106,7 @@
           <label class="form-check-label" for="q4Radio2">Very Important</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" name="q4" type="radio" id="q4Radio3" value=3>
+          <input class="form-check-input" name="q4" type="radio" id="q4Radio3" value=3 checked>
           <label class="form-check-label" for="q4Radio3">Moderately Important</label>
         </div>
         <div class="form-check">
@@ -130,7 +130,7 @@
           <label class="form-check-label" for="q5Radio1">Increase</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" name="q5" type="radio" id="q5Radio2" value=2>
+          <input class="form-check-input" name="q5" type="radio" id="q5Radio2" value=2 checked>
           <label class="form-check-label" for="q5Radio2">Stay the Same</label>
         </div>
         <div class="form-check">
@@ -150,7 +150,7 @@
           <label class="form-check-label" for="q6Radio1">California Department of K-12 Education</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" name="q6" type="radio" id="q6Radio2" value=2>
+          <input class="form-check-input" name="q6" type="radio" id="q6Radio2" value=2 checked>
           <label class="form-check-label" for="q6Radio2">California Department of Transportation</label>
         </div>
         <div class="form-check">
@@ -178,7 +178,7 @@
           <label class="form-check-label" for="q7Radio3">Lean Democrat</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" name="q7" type="radio" id="q7Radio4" value=4>
+          <input class="form-check-input" name="q7" type="radio" id="q7Radio4" value=4 checked>
           <label class="form-check-label" for="q7Radio4">Lean Republican</label>
         </div>
         <div class="form-check">
@@ -214,7 +214,7 @@
           <label class="form-check-label" for="q8Radio3">Slightly Liberal</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" name="q8" type="radio" id="q8Radio4" value=4>
+          <input class="form-check-input" name="q8" type="radio" id="q8Radio4" value=4 checked>
           <label class="form-check-label" for="q8Radio4">Moderate</label>
         </div>
         <div class="form-check">
@@ -234,7 +234,31 @@
           <label class="form-check-label" for="q8Radio8">Not sure</label>
         </div>
         <br>
+        <div class="form-check">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <br>
       </form>
+      <pre id="log">
+      </pre>
     </div>
+    
+    <!--JavaScript-->
+    <script>
+      var form = document.querySelector("form");
+      var log = document.querySelector("#log");
+
+      form.addEventListener("submit", function(event) {
+        var data = new FormData(form);
+        var output = "";
+        for (const entry of data) {
+          console.log(entry);
+          output = output + entry[0] + "=" + entry[1] + "\r";
+        };
+        log.innerText = output;
+        event.preventDefault();
+      }, false);
+    </script>
+
   </body>
 </html>
