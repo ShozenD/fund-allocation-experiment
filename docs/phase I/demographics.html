@@ -17,23 +17,32 @@
   <div class="container">
     <h2>Demographics</h2>
     <br>
-    <form>
+    <p>Before we start, please answer the following questions:</p>
+    <br>
+    <form class="needs-validation" novalidate>
       <div class="form-row">
         <div class="col">
           <div class="form-group">
             <label for="demoGender">What is your gender?</label>
-            <select class="form-control" id="demoGender">
-              <option>Male</option>
-              <option>Female</option>
-              <option>Non-Binary</option>
-              <option>Other</option>
+            <select class="form-control" id="demoGender" required>
+              <option value="">---</option>
+              <option value="1">Male</option>
+              <option value="2">Female</option>
+              <option value="3">Non-Binary</option>
+              <option value="4">Other</option>
             </select>
+            <div class="invalid-feedback">
+              Must be a numerical value between 1 and 100
+            </div>
           </div>
         </div>
         <div class="col">
           <div class="form-group">
             <label for="demoAge">What is your age?</label>
-            <input class="form-control" id="demoAge" placeholder="ex) 21">
+            <input class="form-control" id="demoAge" type="number" min="1" max="100" placeholder="ex) 21" required>
+            <div class="invalid-feedback">
+              Must be a numerical value between 1 and 100
+            </div>
           </div>
         </div>
       </div>
@@ -42,25 +51,70 @@
       <!--Ethnicity-->
       <div class="form-group">
         <label for="demoEthnic">What racial or ethnic group best describe you?</label>
-        <select class="form-control" id="demoEthnic">
-          <option>White</option>
-          <option>Black or African American</option>
-          <option>Hispanic or Latino</option>
-          <option>Asian or Asian American</option>
-          <option>Native American</option>
-          <option>Middle Eastern</option>
-          <option>Mixed Race</option>
-          <option>Other</option>
+        <select class="form-control" id="demoEthnic" required>
+          <option value="">---</option>
+          <option value="1">White</option>
+          <option value="2">Black or African American</option>
+          <option value="3">Hispanic or Latino</option>
+          <option value="4">Asian or Asian American</option>
+          <option value="5">Native American</option>
+          <option value="6">Middle Eastern</option>
+          <option value="7">Mixed Race</option>
+          <option value="8">Other</option>
         </select>
+        <div class="invalid-feedback">
+          This field is required!
+        </div>
       </div>
 
       <!--Major-->
       <div class="form-group">
         <label for="demoMajor">What is your major?</label>
-        <input class="form-control" id="demoMajor" placeholder="ex) Political Science">
+        <input class="form-control" id="demoMajor" type="text" placeholder="ex) Political Science" required>
+        <div class="invalid-feedback">
+          This field is required!
+        </div>
       </div>
+      
+      <button class="btn btn-primary" type="submit">Submit form</button>
     </form>
+    <pre id="log">
+    </pre>
   </div>
+
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            } else {
+              var gender = document.getElementById('demoGender').value;
+              var age = document.getElementById('demoAge').value;
+              var ethnic = document.getElementById('demoEthnic').value;
+              var major = document.getElementById('demoMajor').value;
+              alert("Click the continue button to progress");
+            }
+            form.classList.add('was-validated');
+            event.preventDefault();
+          }, false);
+        });
+      }, false);
+    })();
+  </script>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"crossorigin="anonymous"></script>
 </body>
 
 </html>
