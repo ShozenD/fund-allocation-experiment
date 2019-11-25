@@ -13,14 +13,14 @@ function comparisonTable(myAlloc, otherAlloc) {
   // HTML
   var tableName = 'Budget: ' + otherAlloc.subjectNr
   if (otherAlloc.subjectNr === 1) {
-    tableName = 'Budget: ' + 'Group Leader'
+    tableName = 'Budget: ' + 'Leader'
   }
 
   var gender = otherAlloc.gender
   if (gender === 1) {
-    gender = '<p style="color:Tomato">Male</p>'
+    gender = '<p style="color:DodgerBlue">Male</p>'
   } else if (gender === 2) {
-    gender = '<p style="color:DodgerBlue">Female</p>'
+    gender = '<p style="color:Tomato">Female</p>'
   } else if (gender === 3) {
     gender = '<p>Non Binary</p>'
   } else if (gender === 4) {
