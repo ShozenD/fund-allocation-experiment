@@ -290,25 +290,11 @@
       <br>
     </form>
     <pre id="log">
-      </pre>
+    </pre>
   </div>
 
   <!--JavaScript-->
-  <script>
-    var form = document.querySelector("form");
-    var log = document.querySelector("#log");
 
-    form.addEventListener("submit", function (event) {
-      var data = new FormData(form);
-      var output = "";
-      for (const entry of data) {
-        console.log(entry);
-        output = output + entry[0] + "=" + entry[1] + "\r";
-      };
-      log.innerText = output;
-      event.preventDefault();
-    }, false);
-  </script>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -321,6 +307,29 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+
+  <script>
+    var form = document.querySelector("form");
+    var log = document.querySelector("#log");
+
+    form.addEventListener("submit", function (event) {
+      var data = new FormData(form);
+      var output = "";
+      var output_list = [];
+      for (const entry of data) {
+        console.log(entry[1]);
+        output_list.push(entry[1]);
+        output = output + entry[0] + "=" + entry[1] + "\r";
+      };
+      console.log(output_list)
+      log.innerText = output;
+      event.preventDefault();
+    }, false);
+
+  </script>
+
+
+
 
 </body>
 
