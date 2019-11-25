@@ -11,7 +11,24 @@ function comparisonTable(myAlloc, otherAlloc) {
   var earnings = myAlloc.findTotal() - diffTotal
 
   // HTML
-  var title = '<h4 class="subjectNr">' + 'No: ' + otherAlloc.subjectNr + '</h4><table class="table alloc-table">'
+  var tableName = 'Budget: ' + otherAlloc.subjectNr
+  if (otherAlloc.subjectNr === 1) {
+    tableName = 'Budget: ' + 'Group Leader'
+  }
+
+  var gender = otherAlloc.gender
+  if (gender === 1) {
+    gender = '<p style="color:Tomato">Male</p>'
+  } else if (gender === 2) {
+    gender = '<p style="color:DodgerBlue">Female</p>'
+  } else if (gender === 3) {
+    gender = '<p>Non Binary</p>'
+  } else if (gender === 4) {
+    gender = '<p>Other</p>'
+  }
+
+  var title = '<div class="row"><div class="col-sm"><h4 class="subjectNr">' + tableName + '</h4></div><div class="col-sm"></div><div class="col-sm">' + gender + '</div></div><table class="table alloc-table">'
+  // var title = '<h4 class="subjectNr">' + tableName + '</h4><table class="table alloc-table">'
 
   var thead = '<thead class="thead-dark"><tr><th scope="col">Non-profit Organization</th><th scope="col">Their Budget</th><th scope="col">Your Budget</th><th scope="col">Absolute Difference</th></tr></thead>'
 
