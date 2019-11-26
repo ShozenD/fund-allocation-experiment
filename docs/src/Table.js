@@ -135,7 +135,6 @@ function voteTable(myAlloc, leaderAlloc) {
   }
 
   // HTML
-  var title = '<br><h2 align="left">Allocation Vote</h2>'
 
   var thead = '<thead class="thead-dark"><tr><th scope="col">Non-profit Organization</th><th scope="col">Leader`s Choice</th><th scope="col">Your Allocation</th><th scope="col">Difference</th></tr></thead>'
 
@@ -157,5 +156,5 @@ function voteTable(myAlloc, leaderAlloc) {
 
   var table = '<table class="table">' + thead + tbody + '</table>'
 
-  return (title + table)
+  return (table)
 }
