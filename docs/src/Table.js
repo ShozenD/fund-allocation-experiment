@@ -9,6 +9,9 @@ function comparisonTable(myAlloc, otherAlloc) {
   var diffTrip = Math.abs(myAlloc.trip - otherAlloc.trip)
   var diffTotal = myAlloc.findTotalDiff(otherAlloc)
   var earnings = myAlloc.findTotal() - diffTotal
+  if (earnings < 0) {
+    earnings = 0
+  }
 
   // HTML
   var tableName = 'Budget: ' + otherAlloc.subjectNr
@@ -127,6 +130,9 @@ function voteTable(myAlloc, leaderAlloc) {
   var diffTrip = Math.abs(myAlloc.trip - leaderAlloc.trip)
   var diffTotal = myAlloc.findTotalDiff(leaderAlloc)
   var earnings = myAlloc.findTotal() - diffTotal
+  if (earnings < 0) {
+    earnings = 0
+  }
 
   // HTML
   var title = '<br><h2 align="left">Allocation Vote</h2>'
