@@ -60,7 +60,100 @@
   <!--Introduction-->
   <div class="container">
     <h2>Introduction</h2>
-    <p>This is the web page for the budget allocation experiment conducted by Ph.D. candidate Slande Erole at the University of California, Davis.</p>
+    <div class="container">
+      <p>This is the web page for the budget allocation experiment conducted by Ph.D. candidate Slande Erole at the
+        University of California, Davis.
+      </p>
+    </div>
+  </div>
+
+  <!--Implementation-->
+  <div class="container">
+    <h2>Implementation</h2>
+    <div class="container">
+      <!--LIONESS Lab-->
+      <h4>LIONESS Lab</h4>
+      <div class="row">
+        <div class="col-sm">
+          <div class="container">
+            <p>This experiment was conducted on a platform called <a href="https://lioness-lab.org/">LIONESS Lab</a>.
+              LIONESS Lab is a free web-based platform for interactive online experiments. An experiment can be
+              implemented within the LIONESS Lab environment alone but due to restrictions of LIONESS Lab and in order
+              to simplify JavaScript/CSS, this experiment was implemented with a combination of LIONESS Lab, <a
+                href="https://getbootstrap.com">the Bootstrap CSS Library</a>, and an original API. For more information
+              on LIONESS Lab, visit the links below.</p>
+            <ol>
+              <li><b>LIONESS Lab Website:</b> <a>https://lioness-lab.org/</a></li>
+              <li><b>LIONESS Lab Documentation:</b> <a>https://lioness-doc.readthedocs.io/en/latest/</a></li>
+            </ol>
+          </div>
+        </div>
+        <div class="col-sm"><img src="./src/images/lioness-homepage.png" alt="lioness-homepage.png" class="img-fluid">
+        </div>
+      </div>
+      <br>
+
+      <!--Bootstrap-->
+      <h4>Bootstrap CSS</h4>
+      <div class="container">
+        <p>Due to a lack of CSS options on the LIONESS Lab platform, the CSS for all pages uses <a
+            href="https://getbootstrap.com">Bootstrap</a>: a popular and easy to use CSS library. In order to enable
+          Bootstrap the following <code>&lt;head&gt;</code> must be placed in the <b>first E1 text box on every
+            page</b>.
+        </p>
+        <pre class="rounded" style="background-color:#F0F0F0">
+          <code class="language-html" data-lang="html">
+        &lt;head&gt;
+          &lt;!-- Required meta tags --&gt;
+            &lt;meta charset="utf-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+            
+            &lt;!-- Bootstrap CSS --&gt;
+            &lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"&gt;
+        &lt;head&gt;
+          </code>
+        </pre>
+        <p>Although this helps CSS coding in many ways, there are several cases where it clashes with the LIONESS Lab
+          CSS which prevents the page from rendering in the desired way. For more information on the Bootstrap CSS
+          Library visit the following link: <a>https://getbootstrap.com</a>
+        </p>
+      </div>
+      <br>
+
+      <!--API-->
+      <h4>API</h4>
+      <div class="container">
+        <p>In order to simplify the code on LIONESS Lab, an original JavaScript library was implemented. This library contains the Allocation Class, and functions to render the html for allocation tables. The code can be found under the src folder in the github repository, and a detailed API description can be found <a href="">here</a>. In order to enable this library, the following <code>&lt;script&gt;</code> have to be included in the <code>&lt;head&gt;</code> of the <b>first E1 text box</b> on the page.</p>
+        <pre class="rounded" style="background-color:#F0F0F0">
+          <code>
+          &lt;script src="https://shozend.github.io/fund-allocation-experiment/src/Allocation.js"&gt;&lt;/script&gt;
+          &lt;script src="https://shozend.github.io/fund-allocation-experiment/src/Table.js"&gt;&lt;/script&gt;
+          </code>
+        </pre>
+        <p>A complete <code>&lt;head&gt;</code> with all <code>&lt;meta&gt;</code> and <code>&lt;script&gt;</code> tags included is as follows:</p>
+        <pre class="rounded" style="background-color:#F0F0F0">
+          <code>
+        &lt;head&gt;
+          &lt;!-- Required meta tags --&gt;
+          &lt;meta charset="utf-8"&gt;
+          &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+                
+          &lt;!-- Bootstrap CSS --&gt;
+          &lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"&gt;
+
+          &lt;!-- Additional JavaScript --&gt;
+          &lt;script src="https://shozend.github.io/fund-allocation-experiment/src/Allocation.js"&gt;&lt;/script&gt;
+          &lt;script src="https://shozend.github.io/fund-allocation-experiment/src/Table.js"&gt;&lt;/script&gt;
+        &lt;head&gt;      
+          </code>
+        </pre>
+      </div>
+      <br>
+      <br>
+
+    </div>
   </div>
 
 
