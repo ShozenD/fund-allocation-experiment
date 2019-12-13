@@ -20,7 +20,7 @@ function comparisonTable(myAlloc, otherAlloc, team=false) {
   }
 
   var teamName = ''
-  if (team) {
+  if (otherAlloc.team) {
     teamName = '<p>' + otherAlloc.team + '</p>'
   }
 
