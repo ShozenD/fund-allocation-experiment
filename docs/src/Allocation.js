@@ -1,7 +1,7 @@
 // Class Allocation
 class Allocation {
   // Properties
-  constructor (subjectNr, gender, team = false, rp, hhp, fuf, nales, trip) {
+  constructor (subjectNr, gender, rp, hhp, fuf, nales, trip, team = false) {
     this.subjectNr = subjectNr
     this.gender = gender
     this.team = team // Team name, by default this is false
