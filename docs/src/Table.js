@@ -1,7 +1,7 @@
 // Table Strings
 
 // Allocation table to compare with other members and to submit(for leader)
-function comparisonTable(myAlloc, otherAlloc) {
+function comparisonTable(myAlloc, otherAlloc, team=false) {
   var diffRp = Math.abs(myAlloc.rp - otherAlloc.rp)
   var diffHhp = Math.abs(myAlloc.hhp - otherAlloc.hhp)
   var diffFuf = Math.abs(myAlloc.fuf - otherAlloc.fuf)
@@ -19,6 +19,11 @@ function comparisonTable(myAlloc, otherAlloc) {
     tableName = 'Budget: ' + 'Leader'
   }
 
+  var teamName = ''
+  if (team) {
+    teamName = '<p>' + otherAlloc.team + '</p>'
+  }
+
   var gender = otherAlloc.gender
   if (gender === 1) {
     gender = '<p style="color:DodgerBlue">Male</p>'
@@ -30,7 +35,7 @@ function comparisonTable(myAlloc, otherAlloc) {
     gender = '<p>Other</p>'
   }
 
-  var title = '<div class="row"><div class="col-sm"><h4 class="subjectNr">' + tableName + '</h4></div><div class="col-sm"></div><div class="col-sm">' + gender + '</div></div><table class="table alloc-table">'
+  var title = '<div class="row"><div class="col-sm"><h4 class="subjectNr">' + tableName + '</h4></div><div class="col-sm">' + teamName + '</div><div class="col-sm">' + gender + '</div></div><table class="table alloc-table">'
   // var title = '<h4 class="subjectNr">' + tableName + '</h4><table class="table alloc-table">'
 
   var thead = '<thead class="thead-dark"><tr><th scope="col">Non-profit Organization</th><th scope="col">Their Budget</th><th scope="col">Your Budget</th><th scope="col">Absolute Difference</th></tr></thead>'

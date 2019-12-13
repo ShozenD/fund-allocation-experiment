@@ -1,9 +1,10 @@
 // Class Allocation
 class Allocation {
   // Properties
-  constructor (subjectNr, gender, rp, hhp, fuf, nales, trip) {
+  constructor (subjectNr, gender, team = false, rp, hhp, fuf, nales, trip) {
     this.subjectNr = subjectNr
     this.gender = gender
+    this.team = team // Team name, by default this is false
     this.rp = rp // Reading Partners
     this.hhp = hhp // Human Health Project
     this.fuf = fuf // Friends of the Urban Forest
