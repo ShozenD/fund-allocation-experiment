@@ -1,7 +1,7 @@
 // Table Strings
 
 // Allocation table to compare with other members and to submit(for leader)
-function comparisonTable(myAlloc, otherAlloc, team=false) {
+function comparisonTable(myAlloc, otherAlloc) {
   var diffRp = Math.abs(myAlloc.rp - otherAlloc.rp)
   var diffHhp = Math.abs(myAlloc.hhp - otherAlloc.hhp)
   var diffFuf = Math.abs(myAlloc.fuf - otherAlloc.fuf)
@@ -21,7 +21,7 @@ function comparisonTable(myAlloc, otherAlloc, team=false) {
 
   var teamName = ''
   if (otherAlloc.team) {
-    teamName = '<p>' + otherAlloc.team + '</p>'
+    teamName = '<p>Team: ' + otherAlloc.team + '</p>'
   }
 
   var gender = otherAlloc.gender
