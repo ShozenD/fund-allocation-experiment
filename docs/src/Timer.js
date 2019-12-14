@@ -49,6 +49,8 @@ function initializeClock (id) {
 
     if (t.total <= 0) {
       clearInterval(timeinterval)
+      alert('Timeout! Please finish allocation and/or voting and continue with the experiment.')
+      return true // If timeout function will return true
     }
   }
 
