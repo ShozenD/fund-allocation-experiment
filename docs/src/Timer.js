@@ -24,7 +24,7 @@ class AllocationTimer {
       this.timeout = true
     }
 
-    var t = setTimeout(this.startTimer, 500)
+    setTimeout(this.startTimer(), 500)
   }
 
   displayTime () {
