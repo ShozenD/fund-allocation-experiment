@@ -1,7 +1,7 @@
 class AllocationTimer {
   constructor (startTime) {
     this.startTime = startTime
-    this.remainTime = 300000 // 30 mins
+    this.remainTime = 1000 * 60 * 30 // 30 mins
     this.timeout = false
   }
 
@@ -24,7 +24,7 @@ class AllocationTimer {
       this.timeout = true
     }
 
-    setTimeout(this.startTimer, 500)
+    var t = setTimeout(this.startTimer, 500)
   }
 
   displayTime () {
