@@ -55,7 +55,3 @@ function initializeClock (id, endtime) {
   updateClock()
   var timeinterval = setInterval(updateClock, 1000)
 }
-
-window.onload = function () {
-  initializeClock('clockdiv', deadline)
-}
