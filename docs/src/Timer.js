@@ -30,6 +30,7 @@ function initializeClock (id) {
   // Intialize or store deadline in session Storage
   if (!sessionStorage.getItem('endtime')) {
     sessionStorage.setItem('endtime', String(endtime))
+    sessionStorage.setItem('timeout', 'false') // timeout flag
   } else {
     var deadlineString = sessionStorage.getItem('endtime')
     endtime = new Date(Date.parse(deadlineString))
@@ -50,7 +51,7 @@ function initializeClock (id) {
     if (t.total <= 0) {
       clearInterval(timeinterval)
       alert('Timeout! Please finish allocation and/or voting and continue with the experiment.')
-      return true // If timeout function will return true
+      sessionStorage.setItem('timeout', 'true')
     }
   }
 
