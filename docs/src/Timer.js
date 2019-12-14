@@ -9,18 +9,7 @@ class AllocationTimer {
     var currentTime = new Date()
     var timeSinceStart = this.startTime - currentTime
     this.remainTime = this.remainTime - timeSinceStart
-    this.alertTime()
-    this.displayTime()
-    setTimeout(this.startTimer, 500)
-  }
 
-  displayTime () {
-    var minutes = Math.floor(this.remainTime / 60000)
-    var seconds = Math.floor((this.remainTime % 60000) / 1000).toFixed(0)
-    return minutes + ':' + (seconds < 10 ? '0' : '') + seconds
-  }
-
-  alertTime () {
     const m = 1000 * 60
     if (this.remainTime < m * 15) {
       alert('15 minutes remaining')
@@ -34,5 +23,13 @@ class AllocationTimer {
       alert('Timeout!')
       this.timeout = true
     }
+
+    setTimeout(this.startTimer, 500)
+  }
+
+  displayTime () {
+    var minutes = Math.floor(this.remainTime / 60000)
+    var seconds = Math.floor((this.remainTime % 60000) / 1000).toFixed(0)
+    return minutes + ':' + (seconds < 10 ? '0' : '') + seconds
   }
 }
