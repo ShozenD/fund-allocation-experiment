@@ -1,7 +1,3 @@
-var timeInMinutes = 30
-var currentTime = Date.parse(new Date())
-var deadline = new Date(currentTime + timeInMinutes * 60 * 1000)
-
 function getTimeRemaining (endtime) {
   var t = Date.parse(endtime) - Date.parse(new Date())
   var seconds = Math.floor((t / 1000) % 60)
@@ -26,13 +22,17 @@ function alertTimeRemaining (t) {
   }
 }
 
-function initializeClock (id, endtime) {
+function initializeClock (id) {
+  var timeInMinutes = 30
+  var currentTime = Date.parse(new Date())
+  var endtime = new Date(currentTime + timeInMinutes * 60 * 1000)
+
   // Intialize or store deadline in session Storage
-  if (!sessionStorage.getItem('deadline')) {
-    sessionStorage.setItem('deadline', String(deadline))
+  if (!sessionStorage.getItem('endtime')) {
+    sessionStorage.setItem('endtime', String(endtime))
   } else {
-    var deadlineString = sessionStorage.getItem('deadline')
-    deadline = new Date(Date.parse(deadlineString))
+    var deadlineString = sessionStorage.getItem('endtime')
+    endtime = new Date(Date.parse(deadlineString))
   }
 
   var clock = document.getElementById(id)
