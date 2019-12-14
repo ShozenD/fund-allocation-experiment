@@ -11,13 +11,14 @@ function getTimeRemaining (endtime) {
 
 function alertTimeRemaining (t) {
   var m = t.minutes
-  if (m === 15) {
+  var s = t.seconds
+  if (m === 15 && s === 0) {
     alert('15 minutes remaining!')
-  } else if (m === 10) {
+  } else if (m === 10 && s === 0) {
     alert('10 minutes remaining!')
-  } else if (m === 5) {
+  } else if (m === 5 && s === 0) {
     alert('5 minutes remaining!')
-  } else if (m === 1) {
+  } else if (m === 1 && s === 0) {
     alert('1 minute remaining!')
   }
 }
