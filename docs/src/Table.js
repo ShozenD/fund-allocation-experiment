@@ -72,6 +72,12 @@ function mainTable(myAlloc) {
     leader = true
   }
 
+  var teamName = ''
+  if (myAlloc.team) {
+    teamName = myAlloc.team
+  }
+  var title = '<br><div class="row"><div class="col-sm"><h2 align="left">My Allocation</h2></div><div class="col-sm"></div><div class="col-sm">' + teamName + '</div></div><table class="table">'
+
   // <thead> element
   var thead = '<thead class="thead-dark"> <tr> <th scope="col">Non-profit Organization</th> <th scope="col">About</th> <th scope="col">Original Amount</th>'
   if (leader) {
@@ -124,7 +130,7 @@ function mainTable(myAlloc) {
   }
 
   // return all elements
-  return ('<br><h2 align="left">My Allocations</h2><table class="table">' + thead + tbody + '</table>')
+  return (title + thead + tbody + '</table>')
 }
 
 function voteTable(myAlloc, leaderAlloc) {
