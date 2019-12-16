@@ -147,8 +147,18 @@ function voteTable(myAlloc, leaderAlloc) {
 
   // HTML
   var title = ''
+  var gender = leaderAlloc.gender
+  if (gender === 1) {
+    gender = '<b style="color:DodgerBlue">Male</b>'
+  } else if (gender === 2) {
+    gender = '<b style="color:Tomato">Female</b>'
+  } else if (gender === 3) {
+    gender = '<b>Non Binary</b>'
+  } else if (gender === 4) {
+    gender = '<b>Other</b>'
+  }
   if (myAlloc.team) {
-    title = '<div class="row"><div class="col-sm"></div><div class="col-sm"><b>My Team: ' + myAlloc.team + '</b></div><div class="col-sm"><b>Allocation Team: ' + leaderAlloc.team + '</b></div></div>'
+    title = '<div class="row"><div class="col-sm"><b>Allocation Team: ' + leaderAlloc.team + '</b></div><div class="col-sm"><b>My Team: ' + myAlloc.team + '</b></div><div class="col-sm"><b>Allocation Team: ' + gender + '</b></div></div>'
   }
 
   var thead = '<thead class="thead-dark"><tr><th scope="col">Non-profit Organization</th><th scope="col">Leader`s Choice</th><th scope="col">Your Allocation</th><th scope="col">Difference</th></tr></thead>'
