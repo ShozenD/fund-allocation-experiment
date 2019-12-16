@@ -21,7 +21,7 @@ function comparisonTable(myAlloc, otherAlloc) {
 
   var teamName = ''
   if (otherAlloc.team) {
-    teamName = '<b>My Team: ' + otherAlloc.team + '</b>'
+    teamName = '<b>Team: ' + otherAlloc.team + '</b>'
   }
 
   var gender = otherAlloc.gender
@@ -146,6 +146,10 @@ function voteTable(myAlloc, leaderAlloc) {
   }
 
   // HTML
+  var title = ''
+  if (myAlloc.team) {
+    title = '<div class="row"><div class="col-sm"></div><div class="col-sm"><b>My Team: ' + myAlloc.team + '</b></div><div class="col-sm"><b>Allocation Team: ' + leaderAlloc.team + '</b></div></div>'
+  }
 
   var thead = '<thead class="thead-dark"><tr><th scope="col">Non-profit Organization</th><th scope="col">Leader`s Choice</th><th scope="col">Your Allocation</th><th scope="col">Difference</th></tr></thead>'
 
@@ -165,7 +169,7 @@ function voteTable(myAlloc, leaderAlloc) {
 
   var tbody = '<tbody>' + rp + hhp + fuf + nales + trip + total + earn + '</tbody>'
 
-  var table = '<table class="table">' + thead + tbody + '</table>'
+  var table = title + '<table class="table">' + thead + tbody + '</table>'
 
   return (table)
 }
