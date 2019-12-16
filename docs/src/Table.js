@@ -158,7 +158,7 @@ function voteTable(myAlloc, leaderAlloc) {
     gender = '<b>Other</b>'
   }
   if (myAlloc.team) {
-    title = '<div class="row"><div class="col-sm"><b>Allocation Team: ' + leaderAlloc.team + '</b></div><div class="col-sm"><b>My Team: ' + myAlloc.team + '</b></div><div class="col-sm"><b>Allocation Team: ' + gender + '</b></div></div>'
+    title = '<div class="row"><div class="col-sm"><b>Allocation Team: ' + leaderAlloc.team + '</b></div><div class="col-sm"><b>My Team: ' + myAlloc.team + '</b></div><div class="col-sm">' + gender + '</div></div>'
   }
 
   var thead = '<thead class="thead-dark"><tr><th scope="col">Non-profit Organization</th><th scope="col">Leader`s Choice</th><th scope="col">Your Allocation</th><th scope="col">Difference</th></tr></thead>'
