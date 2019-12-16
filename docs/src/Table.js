@@ -21,7 +21,7 @@ function comparisonTable(myAlloc, otherAlloc) {
 
   var teamName = ''
   if (otherAlloc.team) {
-    teamName = '<p>Team: ' + otherAlloc.team + '</p>'
+    teamName = '<b>My Team: ' + otherAlloc.team + '</b>'
   }
 
   var gender = otherAlloc.gender
@@ -35,7 +35,7 @@ function comparisonTable(myAlloc, otherAlloc) {
     gender = '<p>Other</p>'
   }
 
-  var title = '<div class="row"><div class="col-sm"><h4 class="subjectNr">' + tableName + '</h4></div><div class="col-sm"><b>My Team: ' + teamName + '</b></div><div class="col-sm">' + gender + '</div></div><table class="table alloc-table">'
+  var title = '<div class="row"><div class="col-sm"><h4 class="subjectNr">' + tableName + '</h4></div><div class="col-sm">' + teamName + '</div><div class="col-sm">' + gender + '</div></div><table class="table alloc-table">'
   // var title = '<h4 class="subjectNr">' + tableName + '</h4><table class="table alloc-table">'
 
   var thead = '<thead class="thead-dark"><tr><th scope="col">Non-profit Organization</th><th scope="col">Their Budget</th><th scope="col">Your Budget</th><th scope="col">Absolute Difference</th></tr></thead>'
