@@ -26,13 +26,13 @@ function comparisonTable(myAlloc, otherAlloc) {
 
   var gender = otherAlloc.gender
   if (gender === 1) {
-    gender = '<p style="color:DodgerBlue">Male</p>'
+    gender = '<b style="color:DodgerBlue">Male</b>'
   } else if (gender === 2) {
-    gender = '<p style="color:Tomato">Female</p>'
+    gender = '<b style="color:Tomato">Female</b>'
   } else if (gender === 3) {
-    gender = '<p>Non Binary</p>'
+    gender = '<b>Non Binary</b>'
   } else if (gender === 4) {
-    gender = '<p>Other</p>'
+    gender = '<b>Other</b>'
   }
 
   var title = '<div class="row"><div class="col-sm"><h4 class="subjectNr">' + tableName + '</h4></div><div class="col-sm">' + teamName + '</div><div class="col-sm">' + gender + '</div></div><table class="table alloc-table">'
@@ -74,7 +74,7 @@ function mainTable(myAlloc) {
 
   var teamName = ''
   if (myAlloc.team) {
-    teamName = myAlloc.team
+    teamName = '<b>My Team: ' + myAlloc.team + '</b>'
   }
   var title = '<br><div class="row"><div class="col-sm"><h2 align="left">My Allocation</h2></div><div class="col-sm"></div><div class="col-sm">' + teamName + '</div></div><table class="table">'
 
