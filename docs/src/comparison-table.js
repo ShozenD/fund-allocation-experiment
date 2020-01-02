@@ -68,7 +68,7 @@ class ComparisonTable extends HTMLElement {
         <th scope="row">Your Earnings</th>
         <td id="earnings">${20 - pair.own.findTotalDiff(pair.other)}</td>
         <td></td>
-        <td>${pair.own.subjectNr === 1 ? '<button type="button" class="btn btn-primary btn" onclick="submitAlloc(' + pair.other.subjectNr + ')">Submit</button>' : ''}Submit</button></td>
+        <td>${pair.own.subjectNr === 1 ? '<button type="button" class="btn btn-primary btn" onclick="submitAlloc(' + pair.other.subjectNr + ')">Submit</button>' : ''}</button></td>
       </tr>
     </tbody>
   </table>`;
