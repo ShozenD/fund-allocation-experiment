@@ -19,7 +19,27 @@ class ComparisonTable extends HTMLElement {
 
   set pair(pair){
 
-    this.innerHTML = `    
+    this.innerHTML = `
+    <style>
+      .otheralloc {
+        text-align: center;
+      }
+
+      .myalloc {
+        text-align: center;
+      }
+
+      .diffalloc {
+        text-align:center;
+      }
+
+      #otheralloc_tot { text-align: center }
+
+      #myalloc_tot { text-align: center }
+      
+      #diffalloc_tot { text-align: center }
+    </style>
+
     <div class="row">
       <div class="col-sm"><h4>Budget: ${pair.other.subjectNr == 1 ? 'Leader' : pair.other.subjectNr}</h4></div>
       <div class="col-sm">Team: ${pair.other.team || ''}</div>
