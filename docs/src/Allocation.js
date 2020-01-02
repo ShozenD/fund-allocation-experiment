@@ -38,5 +38,3 @@ class Allocation {
     return diffRp + diffHhp + diffFuf + diffNales + diffTrip
   }
 }
-
-export { Allocation };
