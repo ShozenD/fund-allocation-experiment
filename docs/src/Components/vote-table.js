@@ -2,6 +2,11 @@ class VoteTable extends HTMLElement {
   constructor() {
     super();
 
+    this.backgroundColor = {
+      1: '#e6ecff',
+      2: '#ffd6cc',
+    }
+
     this.gender = {
       1: 'Male',
       2: 'Female',
@@ -15,10 +20,10 @@ class VoteTable extends HTMLElement {
     <div class="row">
       <div class="col-sm"><b>Allocation Team: ${pair.other.team || ''}</b></div>
       <div class="col-sm"><b>My Team: ${pair.own.team || ''}</b></div>
-      <div class="col-sm">${pair.other.gender}</div>
+      <div class="col-sm">${this.gender[pair.other.gender]}</div>
     </div>
 
-    <table class="table">
+    <table class="table" style="background-color:${this.backgroundColor[pair.other.gender] || ''}">
       <thead class="thead-dark">
         <tr>
           <th scope="col">Non-profit Organization</th>
