@@ -18,7 +18,7 @@ class ComparisonTable extends HTMLElement {
       <div class="col-sm">Team: ${pair.other.team || ''}</div>
       <div class="col-sm">${pair.other.gender || ''}</div>
     </div>
-    <table class="table alloc-table" background-color="${this.backgroundColor[pair.other.gender] || ''}">
+    <table class="table alloc-table" style="background-color:${this.backgroundColor[pair.other.gender] || ''}">
     <thead class="thead-dark">
       <tr>
         <th scope="col">Non-profit Organization</th>
