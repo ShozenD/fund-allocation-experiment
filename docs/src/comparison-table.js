@@ -2,12 +2,19 @@ class ComparisonTable extends HTMLElement {
 
   constructor(){
     super();
-
+    
+    // Dictionaries to translate numerical data values to text
     this.backgroundColor = {
       1: '#e6ecff',
       2: '#ffd6cc',
     }
 
+    this.gender = {
+      1: 'Male',
+      2: 'Female',
+      3: 'Non-Binary',
+      4: 'Other'
+    }
   }
 
   set pair(pair){
@@ -16,7 +23,7 @@ class ComparisonTable extends HTMLElement {
     <div class="row">
       <div class="col-sm"><h4>Budget: ${pair.other.subjectNr == 1 ? 'Leader' : pair.other.subjectNr}</h4></div>
       <div class="col-sm">Team: ${pair.other.team || ''}</div>
-      <div class="col-sm">${pair.other.gender || ''}</div>
+      <div class="col-sm">${this.gender[pair.other.gender] || ''}</div>
     </div>
     <table class="table alloc-table" style="background-color:${this.backgroundColor[pair.other.gender] || ''}">
     <thead class="thead-dark">

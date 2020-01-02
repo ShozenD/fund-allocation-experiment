@@ -1,4 +1,4 @@
-import './comparison-table.js'
+import './main-table.js'
 import { otherAlloc, playerAlloc } from './dummyAlloc.js'
 
 window.addEventListener('load', () => {
@@ -11,7 +11,7 @@ function fetchAllocations() {
     other: otherAlloc
   }
   const main = document.querySelector('main');
-  const ct = document.createElement('comparison-table');
-  ct.pair = pair;
-  main.appendChild(ct);
+  const mt = document.createElement('main-table');
+  mt.allocation = pair.other;
+  main.appendChild(mt);
 }
