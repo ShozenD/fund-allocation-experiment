@@ -56,7 +56,7 @@ class MainTable extends HTMLElement {
           <td id="my-alloc-total" align="center">${allocation.findTotal()}</td>
           ${allocation.subjectNr === 1 ? '<td align="center"><input type="text" class="form-control" id="my-new-alloc-total" value=' + allocation.findTotal() + '></td>' : ''}
         </tr>
-        ${allocation.subjectNr === 1 ? '<tr><th scope="row" align="left"></th><td align="left"></td><td align="center"><input class="btn btn-primary" value="Submit Allocation" onclick="submitAlloc(0)"></td><td align="center"><input class="btn btn-primary" value="Submit New Allocation" onclick="submitAlloc(1)"></td></tr>' : ''}
+        ${allocation.subjectNr === 1 ? '<tr><th scope="row" align="left"></th><td align="left"></td><td></td><td align="center"><input class="btn btn-primary" value="Submit New Allocation" onclick="submitAlloc(1)"></td></tr>' : ''}
       </tbody>
     </table>
     `
