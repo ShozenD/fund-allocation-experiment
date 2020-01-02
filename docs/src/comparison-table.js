@@ -12,19 +12,13 @@ class ComparisonTable extends HTMLElement {
 
   set pair(pair){
 
-    this.innerHTML = `
-    <style>
-      table {
-        background-color:${this.backgroundColor[pair.other.gender] || ''};
-      }
-    </style>
-    
+    this.innerHTML = `    
     <div class="row">
       <div class="col-sm"><h4>Budget: ${pair.other.subjectNr == 1 ? 'Leader' : pair.other.subjectNr}</h4></div>
       <div class="col-sm">Team: ${pair.other.team || ''}</div>
       <div class="col-sm">${pair.other.gender || ''}</div>
     </div>
-    <table class="table alloc-table">
+    <table class="table alloc-table" background-color="${this.backgroundColor[pair.other.gender] || ''}">
     <thead class="thead-dark">
       <tr>
         <th scope="col">Non-profit Organization</th>
