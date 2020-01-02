@@ -2,7 +2,6 @@ class ComparisonTable extends HTMLElement {
 
   constructor(){
     super();
-    this.root = this.attachShadow({mode: 'open'});
 
     this.backgroundColor = {
       1: '#e6ecff',
@@ -13,7 +12,7 @@ class ComparisonTable extends HTMLElement {
 
   set pair(pair){
 
-    this.root.innerHTML = `
+    this.innerHTML = `
     <style>
       table {
         background-color:${this.backgroundColor[pair.other.gender] || ''};
