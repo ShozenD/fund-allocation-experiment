@@ -1,4 +1,4 @@
-import './main-table.js'
+import './Components/vote-table.js'
 import { otherAlloc, playerAlloc } from './dummyAlloc.js'
 
 window.addEventListener('load', () => {
@@ -11,7 +11,7 @@ function fetchAllocations() {
     other: otherAlloc
   }
   const main = document.querySelector('main');
-  const mt = document.createElement('main-table');
-  mt.allocation = pair.other;
-  main.appendChild(mt);
+  const vt = document.createElement('vote-table');
+  vt.pair = pair;
+  main.appendChild(vt);
 }
