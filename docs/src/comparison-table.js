@@ -4,10 +4,10 @@ class ComparisonTable extends HTMLElement {
     super();
 
     this.backgroundColor = {
-      Male: '#e6ecff',
-      Female: '#ffd6cc',
+      1: '#e6ecff',
+      2: '#ffd6cc',
     }
-    
+
   }
 
   set pair(pair){
