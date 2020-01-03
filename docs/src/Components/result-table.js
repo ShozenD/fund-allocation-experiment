@@ -51,60 +51,60 @@ class ResultTable extends HTMLElement {
     </style>
 
     <div class="row">
-      <div class="col-sm"><h4>Budget: ${pair.other.subjectNr === 1 ? 'Leader' : pair.other.subjectNr}</h4></div>
-      <div class="col-sm" align="center">Team: <b>${pair.other.team || ''}</b></div>
-      <div class="col-sm" align="center">Gender: ${this.genderDisplay[pair.other.gender] || ''}</div>
+      <div class="col-sm"><h4>Budget: ${pair.their.subjectNr === 1 ? 'Leader' : pair.their.subjectNr}</h4></div>
+      <div class="col-sm" align="center">Team: <b>${pair.proposed.team || ''}</b></div>
+      <div class="col-sm" align="center">Gender: ${this.genderDisplay[pair.their.gender] || ''}</div>
       <div class="col-sm" align="center" color="green"> ${this.voteDisplay[this._vote] || ''} </div>
     </div>
-    <table class="table alloc-table" style="background-color:${this.backgroundColor[pair.other.gender] || ''}">
+    <table class="table alloc-table" style="background-color:${this.backgroundColor[pair.their.gender] || ''}">
     <thead class="thead-dark">
       <tr>
         <th scope="col">Non-profit Organization</th>
+        <th scope="col">Proposed Budget</th>
         <th scope="col">Their Budget</th>
-        <th scope="col">Your Budget</th>
         <th scope="col">Absolute Difference</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <th scope="row">Reading Partners</th>
-        <td class="otheralloc" id="rp">${pair.other.rp || ''}</td>
-        <td class="myalloc" id="rp">${pair.own.rp || ''}</td>
-        <td class="diffalloc" id="rp">${Math.abs(pair.other.rp - pair.own.rp)}</td>
+        <td class="otheralloc" id="rp">${pair.proposed.rp || ''}</td>
+        <td class="myalloc" id="rp">${pair.their.rp || ''}</td>
+        <td class="diffalloc" id="rp">${Math.abs(pair.proposed.rp - pair.their.rp)}</td>
       </tr>
       <tr>
         <th scope="row">Human Health Project</th>
-        <td class="otheralloc" id="hhp">${pair.other.hhp || ''}</td>
-        <td class="myalloc" id="hhp">${pair.own.hhp || ''}</td>
-        <td class="diffalloc" id="hhp">${Math.abs(pair.other.hhp - pair.own.hhp)}</td>
+        <td class="otheralloc" id="hhp">${pair.proposed.hhp || ''}</td>
+        <td class="myalloc" id="hhp">${pair.their.hhp || ''}</td>
+        <td class="diffalloc" id="hhp">${Math.abs(pair.proposed.hhp - pair.their.hhp)}</td>
       </tr>
       <tr>
         <th scope="row">Friends of the Urban Forest</th>
-        <td class="otheralloc" id="fuf">${pair.other.fuf || ''}</td>
-        <td class="myalloc" id="fuf">${pair.own.fuf || ''}</td>
-        <td class="diffalloc" id="fuf">${Math.abs(pair.other.fuf - pair.own.fuf)}</td>
+        <td class="otheralloc" id="fuf">${pair.proposed.fuf || ''}</td>
+        <td class="myalloc" id="fuf">${pair.their.fuf || ''}</td>
+        <td class="diffalloc" id="fuf">${Math.abs(pair.proposed.fuf - pair.their.fuf)}</td>
       </tr>
       <tr>
         <th scope="row">National Alliance for Law Enforcement Support</th>
-        <td class="otheralloc" id="nales">${pair.other.nales || ''}</td>
-        <td class="myalloc" id="nales">${pair.own.nales || ''}</td>
-        <td class="diffalloc" id="nales">${Math.abs(pair.other.nales - pair.own.nales)}</td>
+        <td class="otheralloc" id="nales">${pair.proposed.nales || ''}</td>
+        <td class="myalloc" id="nales">${pair.their.nales || ''}</td>
+        <td class="diffalloc" id="nales">${Math.abs(pair.proposed.nales - pair.their.nales)}</td>
       </tr>
       <tr>
         <th scope="row">TRIP</th>
-        <td class="otheralloc" id="trip">${pair.other.trip || ''}</td>
-        <td class="myalloc" id="trip">${pair.own.trip || ''}</td>
-        <td class="diffalloc" id="trip">${Math.abs(pair.other.trip - pair.own.trip)}</td>
+        <td class="otheralloc" id="trip">${pair.proposed.trip || ''}</td>
+        <td class="myalloc" id="trip">${pair.their.trip || ''}</td>
+        <td class="diffalloc" id="trip">${Math.abs(pair.proposed.trip - pair.their.trip)}</td>
       </tr>
       <tr>
         <th scope="row">Total</th>
-        <td id="otheralloc_tot">${pair.other.findTotal() || ''}</td>
-        <td id="myalloc_tot">${pair.own.findTotal() || ''}</td>
-        <td id="diffalloc_tot">${pair.own.findTotalDiff(pair.other)}</td>
+        <td id="otheralloc_tot">${pair.proposed.findTotal() || ''}</td>
+        <td id="myalloc_tot">${pair.their.findTotal() || ''}</td>
+        <td id="diffalloc_tot">${pair.their.findTotalDiff(pair.proposed)}</td>
       </tr>
       <tr>
         <th scope="row">Earnings</th>
-        <td id="earnings" align="center"><b>${20 - pair.own.findTotalDiff(pair.other)}</b></td>
+        <td id="earnings" align="center"><b>${20 - pair.their.findTotalDiff(pair.proposed)}</b></td>
         <td></td>
         <td></td>
       </tr>

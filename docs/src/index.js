@@ -29,10 +29,10 @@ function displayOtherAllocs () {
   })
 }
 
-function fetchAllocations (own, other, vote) {
+function fetchAllocations (proposed, their, vote) {
   const pair = {
-    own: own,
-    other: other
+    their: their,
+    proposed: proposed
   }
   const rt = document.createElement('result-table')
   console.log(vote)

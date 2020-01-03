@@ -1,14 +1,14 @@
 class MainTable extends HTMLElement {
-  constructor() {
-    super();
+  constructor () {
+    super()
   }
 
-  set allocation(allocation) {
+  set allocation (allocation) {
     this.innerHTML = `<br>
     <div class="row">
       <div class="col-sm"><h2 align="left">My Allocation</h2></div>
       <div class="col-sm"></div>
-      <div class="col-sm">${allocation.team}</div>
+      <div class="col-sm">${allocation.team || ''}</div>
     </div>
     <table class="table">
       <thead class="thead-dark">
@@ -24,31 +24,31 @@ class MainTable extends HTMLElement {
           <th scope="row" align="left">Reading Partners</th>
           <td align="left">Commited to helping children become lifelong readers</td>
           <td name="alloc" id="rp" align="center">${allocation.rp}</td>
-          ${allocation.subjectNr === 1 ? '<td align="center"><input type="text" class="form-control my-new-alloc" id="rp" value=' + allocation.rp + ' onchange="update()"></td>': ''}
+          ${allocation.subjectNr === 1 ? '<td align="center"><input type="text" class="form-control my-new-alloc" id="rp" value=' + allocation.rp + ' onchange="update()"></td>' : ''}
         </tr>
         <tr>
           <th scope="row" align="left">Human Health Project</th>
           <td align="left">Assists individuals who are ill, along with their family, friends & practitioners</td>
           <td name="alloc" id="rp" align="center">${allocation.hhp}</td>
-          ${allocation.subjectNr === 1 ? '<td align="center"><input type="text" class="form-control my-new-alloc" id="rp" value=' + allocation.hhp + ' onchange="update()"></td>': ''}
+          ${allocation.subjectNr === 1 ? '<td align="center"><input type="text" class="form-control my-new-alloc" id="rp" value=' + allocation.hhp + ' onchange="update()"></td>' : ''}
         </tr>
         <tr>
           <th scope="row" align="left">Friends of the Urban Forest</th>
           <td align="left">Promote an urban forest through community plantings, maintenance, education, and advocacy</td>
           <td name="alloc" id="rp" align="center">${allocation.fuf}</td>
-          ${allocation.subjectNr === 1 ? '<td align="center"><input type="text" class="form-control my-new-alloc" id="rp" value=' + allocation.fuf + ' onchange="update()"></td>': ''}
+          ${allocation.subjectNr === 1 ? '<td align="center"><input type="text" class="form-control my-new-alloc" id="rp" value=' + allocation.fuf + ' onchange="update()"></td>' : ''}
         </tr>
         <tr>
           <th scope="row" align="left">National Allicance for Law Enforcement Support</th>
           <td align="left">Provides emotional and financial support to police families</td>
           <td name="alloc" id="rp" align="center">${allocation.nales}</td>
-          ${allocation.subjectNr === 1 ? '<td align="center"><input type="text" class="form-control my-new-alloc" id="rp" value=' + allocation.nales + ' onchange="update()"></td>': ''}
+          ${allocation.subjectNr === 1 ? '<td align="center"><input type="text" class="form-control my-new-alloc" id="rp" value=' + allocation.nales + ' onchange="update()"></td>' : ''}
         </tr>
         <tr>
           <th scope="row" align="left">TRIP</th>
           <td align="left">Promote transportation policies that help relieve traffic congestion</td>
           <td name="alloc" id="rp" align="center">${allocation.trip}</td>
-          ${allocation.subjectNr === 1 ? '<td align="center"><input type="text" class="form-control my-new-alloc" id="rp" value=' + allocation.trip + ' onchange="update()"></td>': ''}
+          ${allocation.subjectNr === 1 ? '<td align="center"><input type="text" class="form-control my-new-alloc" id="rp" value=' + allocation.trip + ' onchange="update()"></td>' : ''}
         </tr>
         <tr>
           <th scope="row" align="left">Total</th>
@@ -63,4 +63,4 @@ class MainTable extends HTMLElement {
   }
 }
 
-customElements.define('main-table', MainTable);
+customElements.define('main-table', MainTable)
