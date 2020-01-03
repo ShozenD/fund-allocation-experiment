@@ -1,12 +1,13 @@
 class ComparisonTable extends HTMLElement {
+  constructor () {
+    super()
 
-  constructor(){
-    super();
-    
+    this.root = this.attachShadow({ mode: 'open' })
+
     // Dictionaries to translate numerical data values to text
     this.backgroundColor = {
       1: '#e6ecff',
-      2: '#ffd6cc',
+      2: '#ffd6cc'
     }
 
     this.gender = {
@@ -17,9 +18,10 @@ class ComparisonTable extends HTMLElement {
     }
   }
 
-  set pair(pair){
+  set pair (pair) {
+    this.root.innerHTML = `
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    this.innerHTML = `
     <style>
       .otheralloc {
         text-align: center;
@@ -38,10 +40,12 @@ class ComparisonTable extends HTMLElement {
       #myalloc_tot { text-align: center }
       
       #diffalloc_tot { text-align: center }
+
+      #earnings { text-align:center } 
     </style>
 
     <div class="row">
-      <div class="col-sm"><h4>Budget: ${pair.other.subjectNr == 1 ? 'Leader' : pair.other.subjectNr}</h4></div>
+      <div class="col-sm"><h4>Budget: ${pair.other.subjectNr === 1 ? 'Leader' : pair.other.subjectNr}</h4></div>
       <div class="col-sm">Team: ${pair.other.team || ''}</div>
       <div class="col-sm">${this.gender[pair.other.gender] || ''}</div>
     </div>
@@ -98,9 +102,8 @@ class ComparisonTable extends HTMLElement {
         <td>${pair.own.subjectNr === 1 ? '<button type="button" class="btn btn-primary btn" onclick="submitAlloc(' + pair.other.subjectNr + ')">Submit</button>' : ''}</button></td>
       </tr>
     </tbody>
-  </table>`;
+  </table>`
   }
-
 }
 
-customElements.define('comparison-table', ComparisonTable);
+customElements.define('comparison-table', ComparisonTable)
