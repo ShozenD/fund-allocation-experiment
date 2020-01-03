@@ -1,17 +1,42 @@
-import './Components/vote-table.js'
-import { otherAlloc, playerAlloc } from './dummyAlloc.js'
+import './Components/result-table.js'
+import { otherAllocs, myAlloc, vote } from './dummyAlloc.js'
 
 window.addEventListener('load', () => {
-  fetchAllocations();
-});
+  createGrid()
+  displayOtherAllocs()
+})
 
-function fetchAllocations() {
-  const pair = {
-    own: playerAlloc,
-    other: otherAlloc
+function createGrid () {
+  const main = document.querySelector('main')
+  var row = document.createElement('div')
+  row.setAttribute('class', 'row')
+
+  var col = document.createElement('div')
+  col.setAttribute('class', 'col-sm alloc-col')
+
+  row.appendChild(col)
+  row.appendChild(col.cloneNode(true))
+
+  for (var i = 0; i < otherAllocs.length / 2; i++) {
+    main.appendChild(row.cloneNode(true))
   }
-  const main = document.querySelector('main');
-  const vt = document.createElement('vote-table');
-  vt.pair = pair;
-  main.appendChild(vt);
+}
+
+function displayOtherAllocs () {
+  document.querySelectorAll('.alloc-col').forEach(function (el, index) {
+    var rt = fetchAllocations(myAlloc, otherAllocs[index], vote[index])
+    el.appendChild(rt)
+  })
+}
+
+function fetchAllocations (own, other, vote) {
+  const pair = {
+    own: own,
+    other: other
+  }
+  const rt = document.createElement('result-table')
+  console.log(vote)
+  rt.vote = vote
+  rt.pair = pair
+  return rt
 }

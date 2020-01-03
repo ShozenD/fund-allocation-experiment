@@ -39,7 +39,14 @@ class Allocation {
   }
 }
 
-const otherAlloc = new Allocation(1, 'Male', 5, 5, 5, 4, 1, 'Diamond');
-const playerAlloc = new Allocation(2, 'Female', 3, 7, 5, 3, 2, 'Diamond');
+const myAlloc = new Allocation(1, 1, 5, 5, 5, 4, 1, 'Diamond')
 
-export { otherAlloc, playerAlloc };
+const alloc1 = new Allocation(2, 3, 5, 4, 6, 3, 2, 'Diamond')
+const alloc2 = new Allocation(3, 1, 6, 3, 7, 2, 2, 'Diamond')
+const alloc3 = new Allocation(4, 2, 6, 3, 8, 2, 1, 'Triangle')
+const alloc4 = new Allocation(5, 4, 5, 4, 7, 3, 1, 'Triangle')
+
+const otherAllocs = [alloc1, alloc2, alloc3, alloc4]
+const vote = [0, 1, 1, 0]
+
+export { myAlloc, otherAllocs, vote }
