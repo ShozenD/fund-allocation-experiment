@@ -51,9 +51,9 @@ class ResultTable extends HTMLElement {
     </style>
 
     <div class="row">
-      <div class="col-sm"><h4>Budget: ${pair.their.subjectNr === 1 ? 'Leader' : pair.their.subjectNr}</h4></div>
-      <div class="col-sm" align="center">Team: <b>${pair.proposed.team || ''}</b></div>
-      <div class="col-sm" align="center">Gender: ${this.genderDisplay[pair.their.gender] || ''}</div>
+      <div class="col-sm"><h4>${pair.their.subjectNr === 1 ? 'Leader' : 'No: ' + pair.their.subjectNr}</h4></div>
+      <div class="col-sm" align="center"><b>${pair.their.team || ''}</b></div>
+      <div class="col-sm" align="center">${this.genderDisplay[pair.their.gender] || ''}</div>
       <div class="col-sm" align="center" color="green"> ${this.voteDisplay[this._vote] || ''} </div>
     </div>
     <table class="table alloc-table" style="background-color:${this.backgroundColor[pair.their.gender] || ''}">
