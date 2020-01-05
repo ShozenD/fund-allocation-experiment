@@ -1,5 +1,5 @@
-import './Components/comparison-table.js'
-import { otherAllocs, myAlloc } from './dummyAlloc.js'
+import './Components/result-table.js'
+import { otherAllocs, myAlloc, vote } from './dummyAlloc.js'
 
 window.addEventListener('load', () => {
   createGrid()
@@ -24,17 +24,18 @@ function createGrid () {
 
 function displayOtherAllocs () {
   document.querySelectorAll('.alloc-col').forEach(function (el, index) {
-    var rt = fetchAllocations(myAlloc, otherAllocs[index])
+    var rt = fetchAllocations(myAlloc, otherAllocs[index], vote[index])
     el.appendChild(rt)
   })
 }
 
-function fetchAllocations (own, other) {
+function fetchAllocations (proposed, their, vote) {
   const pair = {
-    own: own,
-    other: other
+    proposed: proposed,
+    their: their
   }
-  const ct = document.createElement('comparison-table')
-  ct.pair = pair
-  return ct
+  const rt = document.createElement('result-table')
+  rt.vote = vote
+  rt.pair = pair
+  return rt
 }

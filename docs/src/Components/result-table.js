@@ -8,16 +8,21 @@ class ResultTable extends HTMLElement {
       2: '#ffd6cc'
     }
 
+    this.teamDisplay = {
+      Diamond: 'Team: <span style="color:Dodgerblue"><b>Diamond</b> <i class="fa fa-gem"></i></span>',
+      Triangle: 'Team: <span style="color:Tomato"><b>Triangle</b> <i class="fas fa-mountain"></i></span>'
+    }
+
     this.genderDisplay = {
-      1: '<b style="color:#00a5f2">Male </b><i class="fa fa-mars" style="color:#00a5f2" aria-hidden="true"></i>',
-      2: '<b style="color:#b93fd1">Female </b><i class="fa fa-venus" style="color:#b93fd1" aria-hidden="true"></i>',
-      3: '<b style="color:#ff7323">Non-Binary </b><i class="fa fa-neuter" style="color:#ff7323" aria-hidden="true"></i>',
-      4: '<b style="color:#4260ee">Other </b><i class="fa fa-genderless" style="color:#4260ee" aria-hidden="true"></i>'
+      1: '<b style="color:#1b94b9">Male </b><i class="fa fa-mars" style="color:#1b94b9" aria-hidden="true"></i>',
+      2: '<b style="color:#bb281e">Female </b><i class="fa fa-venus" style="color:#bb281e" aria-hidden="true"></i>',
+      3: '<b style="color:#eca33c">Non-Binary </b><i class="fa fa-neuter" style="color:#eca33c" aria-hidden="true"></i>',
+      4: '<b style="color:#a2b86c">Other </b><i class="fa fa-genderless" style="color:#a2b86c" aria-hidden="true"></i>'
     }
 
     this.voteDisplay = {
-      0: '<b style="color:#EF2917">REJECT</b>',
-      1: '<b style="color:#008148">AGREE</b>'
+      0: '<b style="color:#EF2917">REJECT <i class="fas fa-times-circle"></i></b>',
+      1: '<b style="color:#008148">AGREE <i class="fas fa-check-circle"></i></b>'
     }
   }
 
@@ -28,7 +33,7 @@ class ResultTable extends HTMLElement {
   set pair (pair) {
     this.root.innerHTML = `
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
 
     <style>
       .otheralloc {
@@ -51,10 +56,10 @@ class ResultTable extends HTMLElement {
     </style>
 
     <div class="row">
-      <div class="col-sm"><h4>${pair.their.subjectNr === 1 ? 'Leader' : 'No: ' + pair.their.subjectNr}</h4></div>
-      <div class="col-sm" align="center"><b>${pair.their.team || ''}</b></div>
-      <div class="col-sm" align="center">${this.genderDisplay[pair.their.gender] || ''}</div>
-      <div class="col-sm" align="center" color="green"> ${this.voteDisplay[this._vote] || ''} </div>
+      <div class="col-sm"><i class="fas fa-dollar-sign"></i> <b>Budget ${pair.their.subjectNr === 1 ? 'Leader' : pair.their.subjectNr}</b></div>
+      <div class="col-sm" align="left"><b>${this.teamDisplay[pair.their.team] || ''}</b></div>
+      <div class="col-sm" align="right">${this.genderDisplay[pair.their.gender] || ''}</div>
+      <div class="col-sm" align="right" color="green"> ${this.voteDisplay[this._vote] || ''} </div>
     </div>
     <table class="table table-sm table-bordered table-hover alloc-table" style="background-color:${this.backgroundColor[pair.their.gender] || ''}">
     <thead class="thead-dark">
@@ -104,8 +109,7 @@ class ResultTable extends HTMLElement {
       </tr>
       <tr>
         <th scope="row">Earnings</th>
-        <td id="earnings" align="center"><b>${20 - pair.their.findTotalDiff(pair.proposed)}</b></td>
-        <td></td>
+        <td id="earnings" colspan="2" align="center"><b>${20 - pair.their.findTotalDiff(pair.proposed)}</b></td>
         <td></td>
       </tr>
     </tbody>
