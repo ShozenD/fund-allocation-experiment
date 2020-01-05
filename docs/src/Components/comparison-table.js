@@ -10,17 +10,23 @@ class ComparisonTable extends HTMLElement {
       2: '#ffd6cc'
     }
 
-    this.gender = {
-      1: 'Male',
-      2: 'Female',
-      3: 'Non-Binary',
-      4: 'Other'
+    this.teamDisplay = {
+      Diamond: 'Team: <span style="color:Dodgerblue"><b>Diamond</b> <i class="fa fa-gem"></i></span>',
+      Triangle: 'Team: <span style="color:Tomato"><b>Triangle</b> <i class="fas fa-mountain"></i></span>'
+    }
+
+    this.genderDisplay = {
+      1: '<b style="color:#1b94b9">Male </b><i class="fa fa-mars" style="color:#1b94b9" aria-hidden="true"></i>',
+      2: '<b style="color:#bb281e">Female </b><i class="fa fa-venus" style="color:#bb281e" aria-hidden="true"></i>',
+      3: '<b style="color:#eca33c">Non-Binary </b><i class="fa fa-neuter" style="color:#eca33c" aria-hidden="true"></i>',
+      4: '<b style="color:#a2b86c">Other </b><i class="fa fa-genderless" style="color:#a2b86c" aria-hidden="true"></i>'
     }
   }
 
   set pair (pair) {
     this.root.innerHTML = `
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
 
     <style>
       .otheralloc {
@@ -45,11 +51,11 @@ class ComparisonTable extends HTMLElement {
     </style>
 
     <div class="row">
-      <div class="col-sm"><h4>Budget: ${pair.other.subjectNr === 1 ? 'Leader' : pair.other.subjectNr}</h4></div>
-      <div class="col-sm">Team: ${pair.other.team || ''}</div>
-      <div class="col-sm">${this.gender[pair.other.gender] || ''}</div>
+      <div class="col-sm" align="left"><i class="fas fa-dollar-sign"></i> <b>Budget ${pair.other.subjectNr === 1 ? 'Leader' : pair.other.subjectNr}</b></div>
+      <div class="col-sm" align="center">${this.teamDisplay[pair.other.team] || ''}</div>
+      <div class="col-sm" align="right">${this.genderDisplay[pair.other.gender] || ''}</div>
     </div>
-    <table class="table alloc-table" style="background-color:${this.backgroundColor[pair.other.gender] || ''}">
+    <table class="table table-sm table-bordered table-hover alloc-table" style="background-color:${this.backgroundColor[pair.other.gender] || ''}">
     <thead class="thead-dark">
       <tr>
         <th scope="col">Non-profit Organization</th>
@@ -97,9 +103,8 @@ class ComparisonTable extends HTMLElement {
       </tr>
       <tr>
         <th scope="row">Your Earnings</th>
-        <td id="earnings">${20 - pair.own.findTotalDiff(pair.other)}</td>
-        <td></td>
-        <td>${pair.own.subjectNr === 1 ? '<button type="button" class="btn btn-primary btn" onclick="submitAlloc(' + pair.other.subjectNr + ')">Submit</button>' : ''}</button></td>
+        <td colspan="2" id="earnings"><b>${20 - pair.own.findTotalDiff(pair.other)}</b></td>
+        <td align="center">${pair.own.subjectNr === 1 ? '<button type="button" class="btn btn-outline-info btn-block" onclick="submitAlloc(' + pair.other.subjectNr + ')">Select</button>' : ''}</button></td>
       </tr>
     </tbody>
   </table>`

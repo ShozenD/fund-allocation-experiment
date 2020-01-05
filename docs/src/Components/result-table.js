@@ -56,7 +56,7 @@ class ResultTable extends HTMLElement {
       <div class="col-sm" align="center">${this.genderDisplay[pair.their.gender] || ''}</div>
       <div class="col-sm" align="center" color="green"> ${this.voteDisplay[this._vote] || ''} </div>
     </div>
-    <table class="table alloc-table" style="background-color:${this.backgroundColor[pair.their.gender] || ''}">
+    <table class="table table-sm table-bordered table-hover alloc-table" style="background-color:${this.backgroundColor[pair.their.gender] || ''}">
     <thead class="thead-dark">
       <tr>
         <th scope="col">Non-profit Organization</th>
