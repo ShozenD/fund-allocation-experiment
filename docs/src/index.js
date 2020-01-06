@@ -1,11 +1,12 @@
-import './Components/vote-table.js'
+import './Components/main-table.js'
 import { otherAllocs, myAlloc, vote } from './dummyAlloc.js'
 
 window.addEventListener('load', () => {
-  createGrid()
+  // createGrid()
   displayOtherAllocs()
 })
 
+/*
 function createGrid () {
   const main = document.querySelector('main')
   var row = document.createElement('div')
@@ -21,12 +22,19 @@ function createGrid () {
     main.appendChild(row.cloneNode(true))
   }
 }
+*/
 
 function displayOtherAllocs () {
+  const main = document.querySelector('main')
+  const mt = document.createElement('main-table')
+  mt.allocation = myAlloc
+  main.appendChild(mt)
+  /*
   document.querySelectorAll('.alloc-col').forEach(function (el, index) {
     var rt = fetchAllocations(myAlloc, otherAllocs[index])
     el.appendChild(rt)
   })
+  */
 }
 
 function fetchAllocations (own, other) {
@@ -34,8 +42,7 @@ function fetchAllocations (own, other) {
     other: other,
     own: own
   }
-  const vt = document.createElement('vote-table')
-  vt.vote = vote
-  vt.pair = pair
+  const vt = document.createElement('main-table')
+  vt.allocation = own
   return vt
 }

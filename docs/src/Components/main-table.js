@@ -3,25 +3,34 @@ class MainTable extends HTMLElement {
     super()
 
     this.root = this.attachShadow({ mode: 'open' })
+
+    this.teamDisplay = {
+      Diamond: '<span style="color:Dodgerblue;"><b>Diamond</b> <i class="fa fa-gem"></i></span>',
+      Triangle: '<span style="color:Tomato"><b>Triangle</b> <i class="fas fa-mountain"></i></span>'
+    }
   }
 
   set allocation (allocation) {
     this.root.innerHTML = `
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
 
     <style>
       .alloc {
         text-align: center;
       }
+
+      span {
+        font-size: larger
+      }
     </style>
 
     <br>
     <div class="row">
-      <div class="col-sm"><h2 align="left">My Allocation</h2></div>
-      <div class="col-sm"></div>
-      <div class="col-sm">${allocation.team || ''}</div>
+      <div class="col-sm"><h2 align="left">My Budget Allocation</h2></div>
+      <div class="col-sm" align="right">My Team: ${this.teamDisplay[allocation.team] || ''}</div>
     </div>
-    <table class="table">
+    <table class="table table-bordered table-hover alloc-table">
       <thead class="thead-dark">
         <tr>
           <th scope="col">Non-profit Organization</th>
