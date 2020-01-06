@@ -1,6 +1,7 @@
 class VoteTable extends HTMLElement {
   constructor () {
     super()
+    this.root = this.attachShadow({ mode: 'open' })
 
     this.backgroundColor = {
       1: '#e6ecff',
@@ -21,7 +22,7 @@ class VoteTable extends HTMLElement {
   }
 
   set pair (pair) {
-    this.innerHTML = `
+    this.root.innerHTML = `
     <div class="row">
       <div class="col-sm">Team: ${this.teamDisplay[pair.other.team] || ''}</b></div>
       <div class="col-sm" align="right">My Team: ${this.teamDisplay[pair.own.team] || ''}</div>
