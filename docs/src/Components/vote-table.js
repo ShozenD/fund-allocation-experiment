@@ -28,7 +28,7 @@ class VoteTable extends HTMLElement {
 
     <div class="row">
       <div class="col-sm" align="left">Team: ${this.teamDisplay[pair.other.team] || ''}</b></div>
-      <div class="col-sm" align="right">My Team: ${this.teamDisplay[pair.own.team] || ''}</div>
+      <div class="col-sm" align="center">My Team: ${this.teamDisplay[pair.own.team] || ''}</div>
       <div class="col-sm" align="right">${this.genderDisplay[pair.other.gender]}</div>
     </div>
 
@@ -77,7 +77,7 @@ class VoteTable extends HTMLElement {
           <th scope="row" align="center">Your Earnings</th>
           <td id="earnings" align="center"><b>${20 - pair.own.findTotalDiff(pair.other)}</b></td>
           <td>${subjectNr !== 1 ? '<button type="button" class="btn btn-outline-success btn-block" id="vote-agree" onclick="vote(1)">Agree</button>' : ''}</td>
-          <td>${subjectNr !== 1 ? '<button type="button" class="btn btn-danger-primary btn-block" id="vote-agree" onclick="vote(0)">Disagree</button>' : ''}</td>
+          <td>${subjectNr !== 1 ? '<button type="button" class="btn btn-outline-danger btn-block" id="vote-agree" onclick="vote(0)">Disagree</button>' : ''}</td>
         </tr>
       </tbody>
     </table>
