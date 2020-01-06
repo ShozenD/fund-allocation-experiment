@@ -1,29 +1,34 @@
 class VoteTable extends HTMLElement {
-  constructor() {
-    super();
+  constructor () {
+    super()
 
     this.backgroundColor = {
       1: '#e6ecff',
-      2: '#ffd6cc',
+      2: '#ffd6cc'
     }
 
-    this.gender = {
-      1: 'Male',
-      2: 'Female',
-      3: 'Non Binary',
-      4: 'Other'
+    this.genderDisplay = {
+      1: '<b style="color:#1b94b9">Male </b><i class="fa fa-mars" style="color:#1b94b9" aria-hidden="true"></i>',
+      2: '<b style="color:#bb281e">Female </b><i class="fa fa-venus" style="color:#bb281e" aria-hidden="true"></i>',
+      3: '<b style="color:#eca33c">Non-Binary </b><i class="fa fa-neuter" style="color:#eca33c" aria-hidden="true"></i>',
+      4: '<b style="color:#a2b86c">Other </b><i class="fa fa-genderless" style="color:#a2b86c" aria-hidden="true"></i>'
+    }
+
+    this.teamDisplay = {
+      Diamond: '<span style="color:Dodgerblue"><b>Diamond</b> <i class="fa fa-gem"></i></span>',
+      Triangle: '<span style="color:Tomato"><b>Triangle</b> <i class="fas fa-mountain"></i></span>'
     }
   }
 
-  set pair(pair) {
+  set pair (pair) {
     this.innerHTML = `
     <div class="row">
-      <div class="col-sm"><b>Allocation Team: ${pair.other.team || ''}</b></div>
-      <div class="col-sm"><b>My Team: ${pair.own.team || ''}</b></div>
-      <div class="col-sm">${this.gender[pair.other.gender]}</div>
+      <div class="col-sm">Team: ${this.teamDisplay[pair.other.team] || ''}</b></div>
+      <div class="col-sm" align="right">My Team: ${this.teamDisplay[pair.own.team] || ''}</div>
+      <div class="col-sm" align="right">${this.genderDisplay[pair.other.gender]}</div>
     </div>
 
-    <table class="table" style="background-color:${this.backgroundColor[pair.other.gender] || ''}">
+    <table class="table table-bordered table-hover alloc-table" style="background-color:${this.backgroundColor[pair.other.gender] || ''}">
       <thead class="thead-dark">
         <tr>
           <th scope="col">Non-profit Organization</th>
@@ -66,9 +71,7 @@ class VoteTable extends HTMLElement {
         </tr>
         <tr>
           <th scope="row" align="center">Your Earnings</th>
-          <td id="earnings" align="center">${20 - pair.own.findTotalDiff(pair.other)}</td>
-          <td></td>
-          <td></td>
+          <td colspan="3" id="earnings" align="center"><b>${20 - pair.own.findTotalDiff(pair.other)}</b></td>
         </tr>
       </tbody>
     </table>
@@ -76,4 +79,4 @@ class VoteTable extends HTMLElement {
   }
 }
 
-customElements.define('vote-table', VoteTable);
+customElements.define('vote-table', VoteTable)

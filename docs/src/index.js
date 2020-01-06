@@ -1,4 +1,4 @@
-import './Components/result-table.js'
+import './Components/vote-table.js'
 import { otherAllocs, myAlloc, vote } from './dummyAlloc.js'
 
 window.addEventListener('load', () => {
@@ -24,18 +24,18 @@ function createGrid () {
 
 function displayOtherAllocs () {
   document.querySelectorAll('.alloc-col').forEach(function (el, index) {
-    var rt = fetchAllocations(myAlloc, otherAllocs[index], vote[index])
+    var rt = fetchAllocations(myAlloc, otherAllocs[index])
     el.appendChild(rt)
   })
 }
 
-function fetchAllocations (proposed, their, vote) {
+function fetchAllocations (own, other) {
   const pair = {
-    proposed: proposed,
-    their: their
+    other: other,
+    own: own
   }
-  const rt = document.createElement('result-table')
-  rt.vote = vote
-  rt.pair = pair
-  return rt
+  const vt = document.createElement('vote-table')
+  vt.vote = vote
+  vt.pair = pair
+  return vt
 }
