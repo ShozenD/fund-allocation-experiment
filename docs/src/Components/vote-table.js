@@ -76,8 +76,8 @@ class VoteTable extends HTMLElement {
         <tr>
           <th scope="row" align="center">Your Earnings</th>
           <td id="earnings" align="center"><b>${20 - pair.own.findTotalDiff(pair.other)}</b></td>
-          <td>${subjectNr !== 1 ? '<button type="button" class="btn btn-outline-primary" id="vote-agree" onclick="vote(1)">Agree</button>' : ''}</td>
-          <td>${subjectNr !== 1 ? '<button type="button" class="btn btn-outline-primary" id="vote-agree" onclick="vote(0)">Disagree</button>' : ''}</td>
+          <td>${subjectNr !== 1 ? '<button type="button" class="btn btn-outline-success btn-block" id="vote-agree" onclick="vote(1)">Agree</button>' : ''}</td>
+          <td>${subjectNr !== 1 ? '<button type="button" class="btn btn-danger-primary btn-block" id="vote-agree" onclick="vote(0)">Disagree</button>' : ''}</td>
         </tr>
       </tbody>
     </table>
