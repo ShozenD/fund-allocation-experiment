@@ -27,7 +27,7 @@ class VoteTable extends HTMLElement {
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
 
     <div class="row">
-      <div class="col-sm">Team: ${this.teamDisplay[pair.other.team] || ''}</b></div>
+      <div class="col-sm" align="left">Team: ${this.teamDisplay[pair.other.team] || ''}</b></div>
       <div class="col-sm" align="right">My Team: ${this.teamDisplay[pair.own.team] || ''}</div>
       <div class="col-sm" align="right">${this.genderDisplay[pair.other.gender]}</div>
     </div>
@@ -75,7 +75,9 @@ class VoteTable extends HTMLElement {
         </tr>
         <tr>
           <th scope="row" align="center">Your Earnings</th>
-          <td colspan="3" id="earnings" align="center"><b>${20 - pair.own.findTotalDiff(pair.other)}</b></td>
+          <td id="earnings" align="center"><b>${20 - pair.own.findTotalDiff(pair.other)}</b></td>
+          <td>${subjectNr !== 1 ? '<button type="button" class="btn btn-outline-primary" id="vote-agree" onclick="vote(1)">Agree</button>' : ''}</td>
+          <td>${subjectNr !== 1 ? '<button type="button" class="btn btn-outline-primary" id="vote-agree" onclick="vote(0)">Disagree</button>' : ''}</td>
         </tr>
       </tbody>
     </table>
