@@ -31,11 +31,14 @@ function mainGraph (alloc) {
  * @param {HTML Element} el The HTML element to which to attach the graph
  * @param {Object} own The subject's own budget allocation
  * @param {Object} other The budget allocation to compare to.
+ * @param {Boolean} update Changes the behavior of the function for updating the comparison graphs
  */
-function comparisonGraph (el, own, other) {
-  const g = document.createElement('div')
-  g.setAttribute('id', 'comparison-graph-' + other.subjectNr)
-  el.appendChild(g)
+function comparisonGraph (el, own, other, update = false) {
+  if (!update) {
+    const g = document.createElement('div')
+    g.setAttribute('id', 'comparison-graph-' + other.subjectNr)
+    el.appendChild(g)
+  }
 
   const labels = ['RP', 'HHP', 'FUF', 'NALES', 'TRIP']
   const values = [
