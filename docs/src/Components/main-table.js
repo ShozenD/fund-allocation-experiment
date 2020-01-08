@@ -2,8 +2,6 @@ class MainTable extends HTMLElement {
   constructor () {
     super()
 
-    this.root = this.attachShadow({ mode: 'open' })
-
     this.teamDisplay = {
       Diamond: '<span style="color:Dodgerblue;"><b>Diamond</b> <i class="fa fa-gem"></i></span>',
       Triangle: '<span style="color:Tomato"><b>Triangle</b> <i class="fas fa-mountain"></i></span>'
@@ -11,7 +9,7 @@ class MainTable extends HTMLElement {
   }
 
   set allocation (allocation) {
-    this.root.innerHTML = `
+    this.innerHTML = `
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
 
@@ -71,14 +69,14 @@ class MainTable extends HTMLElement {
           ${allocation.subjectNr === 1 ? '<td align="center"><input type="text" class="form-control my-new-alloc" id="trip" value=' + allocation.trip + ' onchange="update()"></td>' : ''}
         </tr>
         <tr>
-          <th scope="row" align="left">Total</th>
-          <td></td>
+          <th colspan="2" scope="row" align="left">Total</th>
           <td id="my-alloc-total" align="center">${allocation.findTotal()}</td>
           ${allocation.subjectNr === 1 ? '<td align="center"><input type="text" class="form-control" id="my-new-alloc-total" value=' + allocation.findTotal() + '></td>' : ''}
         </tr>
         ${allocation.subjectNr === 1 ? '<tr><th scope="row" align="left"></th><td align="left"></td><td></td><td align="center"><input class="btn btn-primary" value="Submit New Allocation" onclick="submitAlloc(1)"></td></tr>' : ''}
       </tbody>
     </table>
+    <div id='my-alloc-graph'></div>
     `
   }
 }

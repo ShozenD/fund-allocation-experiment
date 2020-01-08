@@ -39,6 +39,8 @@ class Allocation {
   }
 }
 
+const myNewAlloc = new Allocation(1, 1, 1, 1, 1, 1, 'Diamond')
+
 const myAlloc = new Allocation(1, 1, 5, 5, 5, 4, 1, 'Diamond')
 
 const alloc1 = new Allocation(2, 3, 5, 4, 6, 3, 2, 'Diamond')
@@ -49,4 +51,4 @@ const alloc4 = new Allocation(5, 4, 5, 4, 7, 3, 1, 'Triangle')
 const otherAllocs = [alloc1, alloc2, alloc3, alloc4]
 const vote = [0, 1, 1, 0]
 
-export { myAlloc, otherAllocs, vote }
+export { myAlloc, otherAllocs, vote, myNewAlloc }
