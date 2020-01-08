@@ -1,7 +1,7 @@
 /**
  * Displays a donut graph for the subjects budget allocation.
  * Requires a predefined element with id = my-alloc-graph.
- * @param {*} alloc the subject's budget allocation
+ * @param {Object} alloc the subject's budget allocation
  */
 function mainGraph (alloc) {
   const labels = ['RP', 'HHP', 'FUF', 'NALES', 'TRIP']
@@ -61,7 +61,8 @@ function comparisonGraph (el, own, other) {
     type: 'pie',
     name: 'Your Budget',
     domain: { row: 0, column: 1 },
-    hoverinfo: 'label+percent+name'
+    hoverinfo: 'label+percent+name',
+    sort: false
   }]
 
   var layout = {
