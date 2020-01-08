@@ -119,7 +119,7 @@ function voteComparisonGraph (el, own, other, update = false) {
     labels: labels,
     hole: 0.4,
     type: 'pie',
-    name: 'Their Budget',
+    name: 'Proposed Budget',
     marker: { colors: colors },
     domain: { row: 0, column: 0 },
     hoverinfo: 'label+percent+name',
@@ -141,8 +141,8 @@ function voteComparisonGraph (el, own, other, update = false) {
       {
         font: { size: 20 },
         showarrow: false,
-        text: 'Their Budget',
-        x: 0.25,
+        text: 'Proposed Budget',
+        x: 0.15,
         y: 1.3
       },
       {
