@@ -1,3 +1,6 @@
+/**
+ * A table that displays the subject's budget allocation.
+ */
 class MainTable extends HTMLElement {
   constructor () {
     super()
