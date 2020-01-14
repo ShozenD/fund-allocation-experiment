@@ -75,7 +75,6 @@ class MainTable extends HTMLElement {
         ${allocation.subjectNr === 1 ? '<tr><th scope="row" align="left"></th><td align="left"></td><td></td><td align="center"><input class="btn btn-outline-info btn-block" value="Submit New Allocation" onclick="submitAlloc(1)"></td></tr>' : ''}
       </tbody>
     </table>
-    <div id='my-alloc-graph'></div>
     `
   }
 }

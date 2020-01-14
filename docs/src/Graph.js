@@ -1,7 +1,7 @@
 /**
  * Displays a donut graph for the subjects budget allocation.
- * Requires a predefined element with id = my-alloc-graph.
- * @param {Object} alloc the subject's budget allocation
+ * Requires a predefined HTML element with element id set to "my-alloc-graph".
+ * @param {Object} alloc the subject's budget allocation(an instance of the Allocation Class)
  */
 function mainGraph (alloc) {
   const labels = ['RP', 'HHP', 'FUF', 'NALES', 'TRIP']
@@ -27,10 +27,10 @@ function mainGraph (alloc) {
 }
 
 /**
- * Draws donut graphs that compare two different budget allocations.
- * @param {HTML Element} el The HTML element to which to attach the graph
- * @param {Object} own The subject's own budget allocation
- * @param {Object} other The budget allocation to compare to.
+ * Draws donut graphs that compare two different budget allocations. The x, y parameters are optimized for the group allocation stage.
+ * @param {HTMLElement} el The HTML element in which to attach the graph to.
+ * @param {Object} own The subject's own budget allocation(an instance of the Allocation Class).
+ * @param {Object} other The budget allocation to compare to(an instance of the Allocation Class).
  * @param {Boolean} update Changes the behavior of the function for updating the comparison graphs
  */
 function comparisonGraph (el, own, other, update = false) {
@@ -94,10 +94,10 @@ function comparisonGraph (el, own, other, update = false) {
 }
 
 /**
- * Draws donut graphs that compare two different budget allocations.
- * @param {HTML Element} el The HTML element to which to attach the graph
- * @param {Object} own The subject's own budget allocation
- * @param {Object} other The budget allocation to compare to.
+ * Draws donut graphs that compare two different budget allocations. The x, y parameters are optimized for the voting page.
+ * @param {HTMLElement} el The HTML element to which to attach the graph
+ * @param {Object} own The subject's own budget allocation(an instance of the Allocation Class).
+ * @param {Object} other The budget allocation to compare to(an instance of the Allocation Class).
  * @param {Boolean} update Changes the behavior of the function for updating the comparison graphs
  */
 function voteComparisonGraph (el, own, other) {
