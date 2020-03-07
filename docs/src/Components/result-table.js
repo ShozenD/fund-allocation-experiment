@@ -9,8 +9,8 @@ class ResultTable extends HTMLElement {
     }
 
     this.teamDisplay = {
-      Diamond: '<span style="color:Dodgerblue"><b>Diamond</b> <i class="fa fa-gem"></i></span>',
-      Triangle: '<span style="color:Tomato"><b>Triangle</b> <i class="fas fa-mountain"></i></span>'
+      A: '<span style="color:Dodgerblue"><b>Diamond</b> <i class="fa fa-gem"></i></span>',
+      B: '<span style="color:Tomato"><b>Triangle</b> <i class="fas fa-mountain"></i></span>'
     }
 
     this.genderDisplay = {
