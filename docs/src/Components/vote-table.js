@@ -68,7 +68,7 @@ class VoteTable extends HTMLElement {
           <td class="diff-alloc" id="rp" align="center">${Math.abs(pair.other.nales - pair.own.nales)}</td>
         </tr>
         <tr>
-          <th scope="row" align="left">Reading Partners</th>
+          <th scope="row" align="left">TRIP</th>
           <td class="leader-alloc" id="rp" align="center">${pair.other.trip}</td>
           <td class="my-alloc" id="rp" align="center">${pair.own.trip}</td>
           <td class="diff-alloc" id="rp" align="center">${Math.abs(pair.other.trip - pair.own.trip)}</td>
