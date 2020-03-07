@@ -16,8 +16,8 @@ class VoteTable extends HTMLElement {
     }
 
     this.teamDisplay = {
-      A: '<span style="color:Dodgerblue"><b>Diamond</b> <i class="fa fa-gem"></i></span>',
-      B: '<span style="color:Tomato"><b>Triangle</b> <i class="fas fa-mountain"></i></span>'
+      A: '<span style="color:Dodgerblue"><b>A</b> <i class="fa fa-gem"></i></span>',
+      B: '<span style="color:Tomato"><b>B</b> <i class="fas fa-mountain"></i></span>'
     }
   }
 
