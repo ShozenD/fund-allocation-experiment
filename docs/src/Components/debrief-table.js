@@ -28,7 +28,7 @@ class DebriefTable extends HTMLElement {
     <br>
     <div class="row">
       <div class="col-sm"><h2 align="left">My Budget Allocation</h2></div>
-      <div class="col-sm" align="right">My ${'MyTeam: ' + this.teamDisplay[allocation.team] || ''}</div>
+      <div class="col-sm" align="right">${('MyTeam: ' + this.teamDisplay[allocation.team]) || ''}</div>
     </div>
     <table class="table table-bordered table-hover alloc-table">
       <thead class="thead-dark">
