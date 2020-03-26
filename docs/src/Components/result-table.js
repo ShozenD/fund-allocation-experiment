@@ -109,7 +109,7 @@ class ResultTable extends HTMLElement {
       </tr>
       <tr>
         <th scope="row">Earnings</th>
-        <td id="earnings" colspan="2" align="center"><b>${20 - pair.their.findTotalDiff(pair.proposed)}</b></td>
+        <td id="earnings" colspan="2" align="center"><b>${100 - pair.their.findTotalDiff(pair.proposed)}</b></td>
         <td></td>
       </tr>
     </tbody>
