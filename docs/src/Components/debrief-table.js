@@ -74,4 +74,4 @@ class DebriefTable extends HTMLElement {
   }
 }
 
-customElements.define('main-table', DebriefTable)
+customElements.define('debrief-table', DebriefTable)
