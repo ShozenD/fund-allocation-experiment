@@ -44,36 +44,36 @@ class MainTable extends HTMLElement {
           <th scope="row" align="left">Reading Partners</th>
           <td align="left">Commited to helping children become lifelong readers</td>
           <td class="alloc">${allocation.rp}</td>
-          ${allocation.subjectNr === 1 ? '<td align="center"><input type="text" class="form-control my-new-alloc" id="rp" value=' + allocation.rp + ' onchange="update()"></td>' : ''}
+          ${allocation.subjectNr === 1 ? '<td align="center"><input type="text" class="form-control my-new-alloc" id="rp" value=' + 0 + ' onchange="update()"></td>' : ''}
         </tr>
         <tr>
           <th scope="row" align="left">Human Health Project</th>
           <td align="left">Assists individuals who are ill, along with their family, friends & practitioners</td>
           <td class="alloc">${allocation.hhp}</td>
-          ${allocation.subjectNr === 1 ? '<td align="center"><input type="text" class="form-control my-new-alloc" id="hhp" value=' + allocation.hhp + ' onchange="update()"></td>' : ''}
+          ${allocation.subjectNr === 1 ? '<td align="center"><input type="text" class="form-control my-new-alloc" id="hhp" value=' + 0 + ' onchange="update()"></td>' : ''}
         </tr>
         <tr>
           <th scope="row" align="left">Friends of the Urban Forest</th>
           <td align="left">Promote an urban forest through community plantings, maintenance, education, and advocacy</td>
           <td class="alloc">${allocation.fuf}</td>
-          ${allocation.subjectNr === 1 ? '<td align="center"><input type="text" class="form-control my-new-alloc" id="fuf" value=' + allocation.fuf + ' onchange="update()"></td>' : ''}
+          ${allocation.subjectNr === 1 ? '<td align="center"><input type="text" class="form-control my-new-alloc" id="fuf" value=' + 0 + ' onchange="update()"></td>' : ''}
         </tr>
         <tr>
           <th scope="row" align="left">National Allicance for Law Enforcement Support</th>
           <td align="left">Provides emotional and financial support to police families</td>
           <td class="alloc">${allocation.nales}</td>
-          ${allocation.subjectNr === 1 ? '<td align="center"><input type="text" class="form-control my-new-alloc" id="nales" value=' + allocation.nales + ' onchange="update()"></td>' : ''}
+          ${allocation.subjectNr === 1 ? '<td align="center"><input type="text" class="form-control my-new-alloc" id="nales" value=' + 0 + ' onchange="update()"></td>' : ''}
         </tr>
         <tr>
           <th scope="row" align="left">TRIP</th>
           <td align="left">Promote transportation policies that help relieve traffic congestion</td>
           <td class="alloc">${allocation.trip}</td>
-          ${allocation.subjectNr === 1 ? '<td align="center"><input type="text" class="form-control my-new-alloc" id="trip" value=' + allocation.trip + ' onchange="update()"></td>' : ''}
+          ${allocation.subjectNr === 1 ? '<td align="center"><input type="text" class="form-control my-new-alloc" id="trip" value=' + 0 + ' onchange="update()"></td>' : ''}
         </tr>
         <tr>
           <th colspan="2" scope="row" align="left">Total</th>
           <td id="my-alloc-total" align="center">${allocation.findTotal()}</td>
-          ${allocation.subjectNr === 1 ? '<td align="center"><input type="text" class="form-control" id="my-new-alloc-total" value=' + allocation.findTotal() + '></td>' : ''}
+          ${allocation.subjectNr === 1 ? '<td align="center"><input type="text" class="form-control" id="my-new-alloc-total" value=' + 0 + '></td>' : ''}
         </tr>
         ${allocation.subjectNr === 1 ? '<tr><th scope="row" align="left"></th><td align="left"></td><td></td><td align="center"><input class="btn btn-outline-info btn-block" value="Submit New Allocation" onclick="submitAlloc(1)"></td></tr>' : ''}
       </tbody>
