@@ -206,15 +206,15 @@ function resultComparisonGraph (el, proposed, their) {
         font: { size: 20 },
         showarrow: false,
         text: 'Proposed Budget',
-        x: 0.10,
-        y: 1.0
+        x: 0.07,
+        y: 1.2
       },
       {
         font: { size: 20 },
         showarrow: false,
         text: 'Their Budget',
         x: 0.92,
-        y: 1.0
+        y: 1.2
       }
     ],
     showlegend: true,
