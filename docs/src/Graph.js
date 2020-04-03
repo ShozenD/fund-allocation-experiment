@@ -76,7 +76,7 @@ function comparisonGraph (el, own, other, update = false) {
         font: { size: 20 },
         showarrow: false,
         text: 'Their Budget',
-        x: 0.1,
+        x: 0.98,
         y: 1.2
       },
       {
