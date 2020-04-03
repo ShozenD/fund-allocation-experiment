@@ -76,7 +76,7 @@ function comparisonGraph (el, own, other, update = false) {
         font: { size: 20 },
         showarrow: false,
         text: 'Their Budget',
-        x: 0.04,
+        x: 0.06,
         y: 1.2
       },
       {
@@ -141,15 +141,15 @@ function voteComparisonGraph (el, own, other) {
         font: { size: 20 },
         showarrow: false,
         text: 'Proposed Budget',
-        x: 0.04,
-        y: 1.5
+        x: 0.06,
+        y: 1.2
       },
       {
         font: { size: 20 },
         showarrow: false,
         text: 'Your Budget',
         x: 0.92,
-        y: 1.5
+        y: 1.2
       }
     ],
     showlegend: true,
