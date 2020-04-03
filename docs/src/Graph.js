@@ -158,3 +158,68 @@ function voteComparisonGraph (el, own, other) {
 
   Plotly.newPlot('comparison-graph-' + other.subjectNr, data, layout)
 }
+
+/**
+ * Draws donut graphs that compare two different budget allocations. The x, y parameters are optimized for the voting page.
+ * @param {HTMLElement} el The HTML element to which to attach the graph
+ * @param {Object} own The subject's own budget allocation(an instance of the Allocation Class).
+ * @param {Object} other The budget allocation to compare to(an instance of the Allocation Class).
+ * @param {Boolean} update Changes the behavior of the function for updating the comparison graphs
+ */
+function resultComparisonGraph (el, proposed, their) {
+  const g = document.createElement('div')
+  g.setAttribute('id', 'comparison-graph-' + other.subjectNr)
+  el.appendChild(g)
+
+  const labels = ['RP', 'HHP', 'FUF', 'NALES', 'TRIP']
+  const values = [
+    [proposed.rp, proposed.hhp, proposed.fuf, proposed.nales, proposed.trip],
+    [their.rp, their.hhp, their.fuf, their.nales, their.trip]
+  ]
+  const colors = ['#003f5c', '#58508d', '#bc5090', '#ff6361', '#ffa600']
+
+  var data = [{
+    values: values[1],
+    labels: labels,
+    hole: 0.4,
+    type: 'pie',
+    name: 'Proposed Budget',
+    marker: { colors: colors },
+    domain: { row: 0, column: 0 },
+    hoverinfo: 'label+percent+name',
+    sort: false
+  }, {
+    values: values[0],
+    labels: labels,
+    hole: 0.4,
+    type: 'pie',
+    name: 'Their Budget',
+    domain: { row: 0, column: 1 },
+    hoverinfo: 'label+percent+name',
+    sort: false
+  }]
+
+  var layout = {
+    height: 400,
+    annotations: [
+      {
+        font: { size: 20 },
+        showarrow: false,
+        text: 'Proposed Budget',
+        x: 0.90,
+        y: 1.5
+      },
+      {
+        font: { size: 20 },
+        showarrow: false,
+        text: 'Their Budget',
+        x: 0.92,
+        y: 1.5
+      }
+    ],
+    showlegend: true,
+    grid: { rows: 1, columns: 2 }
+  }
+
+  Plotly.newPlot('comparison-graph-' + other.subjectNr, data, layout)
+}
