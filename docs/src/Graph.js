@@ -76,15 +76,15 @@ function comparisonGraph (el, own, other, update = false) {
         font: { size: 20 },
         showarrow: false,
         text: 'Their Budget',
-        x: 0,
-        y: 1.0
+        x: 0.3,
+        y: 1.2
       },
       {
         font: { size: 20 },
         showarrow: false,
         text: 'Your Budget',
-        x: 0.97,
-        y: 1.0
+        x: 0.90,
+        y: 1.2
       }
     ],
     showlegend: true,

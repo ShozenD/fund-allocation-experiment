@@ -29,7 +29,7 @@ class VoteTable extends HTMLElement {
     <div class="row">
       <div class="col-sm" align="left">Team: ${this.teamDisplay[pair.other.team] || ''}</b></div>
       <div class="col-sm" align="center">My Team: ${this.teamDisplay[pair.own.team] || ''}</div>
-      <div class="col-sm" align="right">${this.genderDisplay[pair.other.gender]}</div>
+      <div class="col-sm" align="right">${this.genderDisplay[pair.other.gender] || ''}</div>
     </div>
 
     <table class="table table-bordered table-hover alloc-table" style="background-color:${this.backgroundColor[pair.other.gender] || ''}">
