@@ -5,6 +5,8 @@ class MainTable extends HTMLElement {
   constructor () {
     super()
 
+    this.root = this.attachShadow({ mode: 'open' })
+
     this.teamDisplay = {
       A: '<span style="color:Dodgerblue;"><b>A</b> <i class="fa fa-gem"></i></span>',
       B: '<span style="color:Tomato"><b>B</b> <i class="fas fa-mountain"></i></span>'
@@ -12,7 +14,8 @@ class MainTable extends HTMLElement {
   }
 
   set allocation (allocation) {
-    this.innerHTML = `
+    this.root.innerHTML = `
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
 
     <style>
@@ -24,10 +27,8 @@ class MainTable extends HTMLElement {
         font-size: larger
       }
     </style>
-
-    <br>
+    
     <div class="row">
-      <div class="col-sm"><h2 align="left">My Budget Allocation</h2></div>
       <div class="col-sm" align="right">My ${'MyTeam: ' + this.teamDisplay[allocation.team] || ''}</div>
     </div>
     <table class="table table-bordered table-hover alloc-table">
