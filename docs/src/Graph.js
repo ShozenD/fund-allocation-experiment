@@ -141,15 +141,15 @@ function voteComparisonGraph (el, own, other) {
         font: { size: 20 },
         showarrow: false,
         text: 'Proposed Budget',
-        x: 0.10,
-        y: 1.3
+        x: 0.30,
+        y: 1.5
       },
       {
         font: { size: 20 },
         showarrow: false,
         text: 'Your Budget',
-        x: 0.85,
-        y: 1.3
+        x: 0.80,
+        y: 1.5
       }
     ],
     showlegend: true,
