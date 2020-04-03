@@ -5,9 +5,9 @@ window.addEventListener('load', () => {
 function displayExpla () {
   const div = document.querySelector('.my-alloc')
   console.log(div)
-  const exp = document.createElement('phase1-exp')
+  const exp = document.createElement('alloc-table')
 
-  exp.explanation = { team: 'A', leader: true }
+  exp.allocation = {}
 
   div.appendChild(exp)
 }
