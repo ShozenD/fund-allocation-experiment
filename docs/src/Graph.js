@@ -3,9 +3,9 @@
  * Requires a predefined HTML element with element id set to "my-alloc-graph".
  * @param {Object} alloc the subject's budget allocation(an instance of the Allocation Class)
  */
-function mainGraph (alloc) {
+function mainGraph (alloc, a) {
 
-  console.log("-----", document.getElementById("my-alloc-graph"));
+  console.log("-----", a.getElementById("my-alloc-graph"));
 
   const labels = ['RP', 'HHP', 'FUF', 'NALES', 'TRIP']
   const values = [alloc.rp, alloc.hhp, alloc.fuf, alloc.nales, alloc.trip]
