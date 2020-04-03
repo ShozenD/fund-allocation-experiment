@@ -3,7 +3,7 @@ window.addEventListener('load', () => {
 })
 
 function displayExpla () {
-  const div = document.querySelector('#my-alloc')
+  const div = document.querySelector('.my-alloc')
   console.log(div)
   const exp = document.createElement('exp-introduction')
 
