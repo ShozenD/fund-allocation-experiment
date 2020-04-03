@@ -1,18 +1,12 @@
-class TeamGroupAllocExp extends HTMLElement {
+class GroupAllocExp extends HTMLElement {
   constructor () {
     super()
     this.root = this.attachShadow({ mode: 'open' })
-
-    this.teamDisplay = {
-      A: '<span style="color:Dodgerblue;"><b>A</b> <i class="fa fa-gem"></i></span>',
-      B: '<span style="color:Tomato"><b>B</b> <i class="fas fa-mountain"></i></span>'
-    }
   }
 
   set explanation (info) {
     this.root.innerHTML = `
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
 
     <style>
       .alloc {
@@ -26,7 +20,6 @@ class TeamGroupAllocExp extends HTMLElement {
     <div class="container">
       <!--Title-->
       <h1 align="left">Group Allocation</h1><br>
-      <h3 id="subGrp" align="left">You are in team: ${this.teamDisplay[info.team]}</h3><br>
 
       <!--Member Explanation 1-->
       <div class="row member-expla-1">
@@ -34,32 +27,17 @@ class TeamGroupAllocExp extends HTMLElement {
           in the next screen</h4>
         <p align="left">
           We previously asked you, individually, to allocate funds between five (5) non-profit
-          organizations. In this part of the experiment (Phase II), you will be divided into two (2) teams. Even
-          though you are divided into two (2) different teams, we are asking that both teams come together and agree
-          about how to spend $100 between these five (5) organizations. This means that<b>a majority of the group
-            (50% + 1)</b> must be in agreement about the allocation.</p>
+          organizations. Now, we are asking that you come to an agreement <b>AS A GROUP</b> about how to spend $100 between these five (5) organizations. A <b>majority of the group (50% + 1)</b> must be in agreement about the allocation.
+        </p>
         <p align="left">
-          One member of the entire group will be randomly selected as the leader. The leader will be
-          provided with the allocations of all group members and will be <b>tasked with selecting <u>one</u> budget
-          to put up for a group vote</b>. Everyone will also be provided with the budgets of all of members of
-          the group, including those of players who are on your team. Again, the budget will only pass if a majority
-          (50% + 1) of members support it.</p>
+          One member of the group will be randomly selected as the leader. The leader will be provided with the allocations of all group members and will be <b>tasked with selecting <u>one</u> budget to put up for a group vote</b>. Everyone will also be provided with the budgets of all group members. Again, the budget will only pass if a majority (50% + 1) of members support it.
+        </p>
         <p align="left">
-          Once an allocation is agreed to, we will calculate the absolute difference between the amount given to an
-          organization by the entire group and the amount donated to the organization earlier. We will add up the
-          differences for all five (5) groups. This amount will then be subtracted from the $100 <b>you</b> received at the
-          start.</p>
+          Once an allocation is agreed to, we will calculate the absolute difference between the amount given to an organization by the group and the amount  donated to the organization earlier. We will add up the differences for all five (5) groups. This amount will then be subtracted from the $100 <b>you</b> received at the start.
+        </p>
         <p align="left">
-          Your goal in this part of the study is to adopt an allocation that minimizes the difference between the
-          group's allocation and your own as much as possible.</p>
-        <p align="left">It is also your goal in this part of the study to come to an agreement with the other members
-          of your <b>team</b>. If all of the members of your team vote for the final group budget, everyone on
-          that team will receive an additional "earning" of $25.</p>
-        <p align="left"><b>Remember</b> that at the end of the study, one allocation will be randomly selected.
-          If your allocation is the one which is randomly selected, your accumulated "earnings" in this section of the
-          study (Phase II) will be sent to whichever organization that you had allocated the most amount of funds to
-          (this is in addition to the amounts allocated to that organization in Phase I). See the table below for an
-          example.</p>
+          Your goal in this part of the study is to adopt an allocation that <b>minimizes the difference between the group's allocation and your own as much as possible.</b> that at the end of the study, one allocation will be randomly selected. If your allocation is the one which is randomly selected, "Your Earnings" in this of the study will be sent to whichever organization that you had allocated the most amount of funds to. See the table below for an example.
+        </p>
       </div>
 
       <!--Table-->
@@ -123,7 +101,7 @@ class TeamGroupAllocExp extends HTMLElement {
       <div class="row member-expla-2">
         <p align="left">For example: if all the <b>members of your team</b> voted for the final group budget, your "earnings"
           would total $65 ($40 absolute difference + $25 team reward).</p>
-        <p>Lastly, if the group is unable to agree on an allocation after 30 minutes, this
+        <p align="left">Lastly, if the group is unable to agree on an allocation after 30 minutes, this
           phase of the study will end. You will be unable to "earn" any additional funds that could potentially be sent
           to your preferred organization.</p>
       </div>
@@ -145,4 +123,4 @@ class TeamGroupAllocExp extends HTMLElement {
   }
 }
 
-customElements.define('team-group-alloc-exp', TeamGroupAllocExp)
+customElements.define('group-alloc-exp', GroupAllocExp)
