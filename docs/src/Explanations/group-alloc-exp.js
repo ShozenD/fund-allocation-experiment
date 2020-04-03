@@ -18,10 +18,8 @@ class GroupAllocExp extends HTMLElement {
     </style>
 
     <div class="container">
-      <!--Title-->
       <h1 align="left">Group Allocation</h1><br>
 
-      <!--Member Explanation 1-->
       <div class="row member-expla-1">
         <h4 align="left">Your understanding of the following instructions will be checked
           in the next screen</h4>
@@ -40,7 +38,6 @@ class GroupAllocExp extends HTMLElement {
         </p>
       </div>
 
-      <!--Table-->
       <div class="row table">
         <table class="table">
           <thead class="thead-dark">
