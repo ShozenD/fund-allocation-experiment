@@ -206,7 +206,7 @@ function resultComparisonGraph (el, proposed, their) {
         font: { size: 20 },
         showarrow: false,
         text: 'Proposed Budget',
-        x: 0.07,
+        x: 0.05,
         y: 1.2
       },
       {
