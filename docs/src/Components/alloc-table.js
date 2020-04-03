@@ -52,6 +52,9 @@ class AllocTable extends HTMLElement {
           </tbody>
         </table>
       </div>
+
+      <div id="my-alloc-graph" class="col-4"></div> 
+
     </div>`
   }
 }
