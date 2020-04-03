@@ -10,7 +10,7 @@ class TeamGroupAllocExp extends HTMLElement {
   }
 
   set explanation (info) {
-    this.innerHTML = `
+    this.root.innerHTML = `
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
 
@@ -26,7 +26,7 @@ class TeamGroupAllocExp extends HTMLElement {
     <div class="container">
       <!--Title-->
       <h1 align="left">Group Allocation</h1><br>
-      <h3 id="subGrp" align="left">You are in: Group $groupNr$</h3><br>
+      <h3 id="subGrp" align="left">You are in team: ${this.teamDisplay[info.team]}</h3><br>
 
       <!--Member Explanation 1-->
       <div class="row member-expla-1">
@@ -131,6 +131,17 @@ class TeamGroupAllocExp extends HTMLElement {
       <div class="leader-expla-title"></div>
       <div class="row leader-expla"></div>
   </div>`
+
+  if (info.leader) {
+    this.root.innerHTML = this.root.innerHTML + `
+    <br>
+    <h4 align="center" class="text-danger leader-alert">You have been randomly chosen as group leader!</h4>
+    <br>
+    <h4 align="left">Leader's Task:</h4>
+    <p align="left">
+      Your job is to divide $100 between the same five organizations you donated to previously. To help with this task, you (and the other participants) will be provided with each members’ allocations. Once you have created a new budget (or have selected one from a participant), it will be put up for a vote. The budget will only pass if a majority (50% + 1) of participants support it.
+    </p>`
+  }
   }
 }
 
