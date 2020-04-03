@@ -25,7 +25,6 @@ class TeamGroupAllocExp extends HTMLElement {
 
     <div class="container">
       <!--Title-->
-      <h1 align="left">Group Allocation</h1><br>
       <h3 id="subGrp" align="left">You are in team: ${this.teamDisplay[info.team]}</h3><br>
 
       <!--Member Explanation 1-->

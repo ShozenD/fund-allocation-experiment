@@ -18,8 +18,6 @@ class GroupAllocExp extends HTMLElement {
     </style>
 
     <div class="container">
-      <h1 align="left">Group Allocation</h1><br>
-
       <div class="row member-expla-1">
         <h4 align="left">Your understanding of the following instructions will be checked
           in the next screen</h4>
