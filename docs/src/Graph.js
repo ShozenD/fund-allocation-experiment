@@ -4,6 +4,9 @@
  * @param {Object} alloc the subject's budget allocation(an instance of the Allocation Class)
  */
 function mainGraph (alloc) {
+
+  console.log("-----", document.getElementById("my-alloc-graph"));
+
   const labels = ['RP', 'HHP', 'FUF', 'NALES', 'TRIP']
   const values = [alloc.rp, alloc.hhp, alloc.fuf, alloc.nales, alloc.trip]
   const colors = ['#003f5c', '#58508d', '#bc5090', '#ff6361', '#ffa600']

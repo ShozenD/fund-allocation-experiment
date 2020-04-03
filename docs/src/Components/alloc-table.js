@@ -1,5 +1,5 @@
 class AllocTable extends HTMLElement {
-  constructor() {
+  constructor () {
     super()
     this.root = this.attachShadow({ mode: 'open' })
   }
@@ -53,7 +53,7 @@ class AllocTable extends HTMLElement {
         </table>
       </div>
 
-      <div id="my-alloc-graph" class="col-4"></div> 
+      <div id="my-alloc-graph" class="col-4">Hello</div> 
 
     </div>`
   }
