@@ -168,7 +168,7 @@ function voteComparisonGraph (el, own, other) {
  */
 function resultComparisonGraph (el, proposed, their) {
   const g = document.createElement('div')
-  g.setAttribute('id', 'comparison-graph-' + other.subjectNr)
+  g.setAttribute('id', 'comparison-graph-' + their.subjectNr)
   el.appendChild(g)
 
   const labels = ['RP', 'HHP', 'FUF', 'NALES', 'TRIP']
