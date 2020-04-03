@@ -8,9 +8,8 @@ class Introduction extends HTMLElement {
     this.root.innerHTML = `
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <div class="container">
-      <h1 align="left">Introduction</h1>
-    </div>
+    <h1 align="left">Introduction</h1>
+    
     <div class="container">
       <p align="left">
         <b>Thank you!</b> for participating in this study. This study is part of an academic research project being
