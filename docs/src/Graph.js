@@ -141,7 +141,7 @@ function voteComparisonGraph (el, own, other) {
         font: { size: 20 },
         showarrow: false,
         text: 'Proposed Budget',
-        x: 0.90,
+        x: 0.04,
         y: 1.5
       },
       {
