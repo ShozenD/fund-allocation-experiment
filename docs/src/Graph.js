@@ -221,5 +221,5 @@ function resultComparisonGraph (el, proposed, their) {
     grid: { rows: 1, columns: 2 }
   }
 
-  Plotly.newPlot('comparison-graph-' + other.subjectNr, data, layout)
+  Plotly.newPlot('comparison-graph-' + their.subjectNr, data, layout)
 }
