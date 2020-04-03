@@ -8,8 +8,6 @@ class AllocTable extends HTMLElement {
     this.root.innerHTML = `
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <div class="row">
-      <div class="col-sm my-allocation">
         <table class="table">
           <thead class="thead-dark">
             <tr>
@@ -50,12 +48,7 @@ class AllocTable extends HTMLElement {
               <th><input type="text" class="form-control" name="total" id="total"></th>
             </tr>
           </tbody>
-        </table>
-      </div>
-
-      <div id="my-alloc-graph" class="col-4">Hello</div> 
-
-    </div>`
+        </table>`
   }
 }
 
