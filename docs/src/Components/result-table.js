@@ -56,7 +56,7 @@ class ResultTable extends HTMLElement {
     </style>
 
     <div class="row">
-      <div class="col-sm"><i class="fas fa-dollar-sign"></i> <b>Budget ${pair.their.subjectNr === 1 ? 'Leader' : pair.their.subjectNr}</b></div>
+      <div class="col-sm"><b>Budget ${pair.their.subjectNr === 1 ? 'Leader' : pair.their.subjectNr}</b></div>
       <div class="col-sm" align="left"><b>${this.teamDisplay[pair.their.team] || ''}</b></div>
       <div class="col-sm" align="right">${this.genderDisplay[pair.their.gender] || ''}</div>
       <div class="col-sm" align="right" color="green"> ${this.voteDisplay[this._vote] || ''} </div>

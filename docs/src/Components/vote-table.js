@@ -74,7 +74,7 @@ class VoteTable extends HTMLElement {
           <td class="diff-alloc" id="rp" align="center">${Math.abs(pair.other.trip - pair.own.trip)}</td>
         </tr>
         <tr>
-          <th scope="row" align="center">Your Earnings</th>
+          <th scope="row" align="center">Your "earnings" if this budget is passed</th>
           <td id="earnings" align="center"><b>${100 - pair.own.findTotalDiff(pair.other)}</b></td>
           <td>${subjectNr !== 1 ? '<button type="button" class="btn btn-outline-success btn-block" id="vote-agree" onclick="vote(1)">Agree</button>' : ''}</td>
           <td>${subjectNr !== 1 ? '<button type="button" class="btn btn-outline-danger btn-block" id="vote-agree" onclick="vote(0)">Disagree</button>' : ''}</td>

@@ -51,7 +51,7 @@ class ComparisonTable extends HTMLElement {
     </style>
 
     <div class="row">
-      <div class="col-sm" align="left"><i class="fas fa-dollar-sign"></i> <b>Budget ${pair.other.subjectNr === 1 ? 'Leader' : pair.other.subjectNr}</b></div>
+      <div class="col-sm" align="left"><b>Budget ${pair.other.subjectNr === 1 ? 'Leader' : pair.other.subjectNr}</b></div>
       <div class="col-sm" align="center">${this.teamDisplay[pair.other.team] || ''}</div>
       <div class="col-sm" align="right">${this.genderDisplay[pair.other.gender] || ''}</div>
     </div>
