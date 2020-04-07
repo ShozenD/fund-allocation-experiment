@@ -55,7 +55,7 @@ class ExpTable extends HTMLElement {
             <td>60</td>
           </tr>
           <tr>
-            <th scope="row">Your Earnings</th>
+            <th scope="row">Your "earnings" if this budget passed</th>
             <td>$40 (100 - 60)</td>
             <td></td>
             <td></td>
