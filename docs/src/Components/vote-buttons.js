@@ -22,3 +22,5 @@ class VoteButtons extends HTMLElement {
     `
   }
 }
+
+customElements.define('vote-buttons', VoteButtons)
