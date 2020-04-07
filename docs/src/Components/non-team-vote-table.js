@@ -69,8 +69,8 @@ class NonTeamVoteTable extends HTMLElement {
           <td class="diff-alloc" id="rp" align="center">${Math.abs(pair.other.trip - pair.own.trip)}</td>
         </tr>
         <tr>
-          <th scope="row" colspan="2" align="center">Your "earnings" if this budget is passed</th>
-          <td id="earnings" colspan="2" align="center"><b>${100 - pair.own.findTotalDiff(pair.other)}</b></td>
+          <th scope="row" align="center">Your "earnings" if this budget is passed</th>
+          <td id="earnings" colspan="3" align="center"><b>${100 - pair.own.findTotalDiff(pair.other)}</b></td>
         </tr>
       </tbody>
     </table>
