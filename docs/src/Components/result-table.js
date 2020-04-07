@@ -65,7 +65,7 @@ class ResultTable extends HTMLElement {
     <thead class="thead-dark">
       <tr>
         <th scope="col">Non-profit Organization</th>
-        <th scope="col">Proposed Budget</th>
+        <th scope="col">Leader's Choice</th>
         <th scope="col">Their Budget</th>
         <th scope="col">Absolute Difference</th>
       </tr>
@@ -108,7 +108,7 @@ class ResultTable extends HTMLElement {
         <td id="diffalloc_tot">${pair.their.findTotalDiff(pair.proposed)}</td>
       </tr>
       <tr>
-        <th scope="row">Earnings</th>
+        <th scope="row">Their "earnings" if this budget is passed</th>
         <td id="earnings" colspan="2" align="center"><b>${100 - pair.their.findTotalDiff(pair.proposed)}</b></td>
         <td></td>
       </tr>
