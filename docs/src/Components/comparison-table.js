@@ -102,8 +102,8 @@ class ComparisonTable extends HTMLElement {
         <td id="diffalloc_tot">${pair.own.findTotalDiff(pair.other)}</td>
       </tr>
       <tr>
-        <th scope="row">Your Earnings</th>
-        <td colspan="2" id="earnings"><b>${100 - pair.own.findTotalDiff(pair.other)}</b></td>
+        <th scope="row" colspan="2" >Your "earnings" if this budget is passed</th>
+        <td id="earnings"><b>${100 - pair.own.findTotalDiff(pair.other)}</b></td>
         <td align="center">${pair.own.subjectNr === 1 ? '<button type="button" class="btn btn-outline-info btn-block" onclick="submitAlloc(' + pair.other.subjectNr + ')">Select</button>' : ''}</button></td>
       </tr>
     </tbody>
