@@ -10,6 +10,7 @@ class VoteButtons extends HTMLElement {
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
       <div class="container">
+        <br>
         <div class="row">
           <div class="col-sm">
             <button type="button" class="btn btn-outline-success btn-lg btn-block" id="vote-agree" onclick="vote(1)">Agree</button>
@@ -18,6 +19,7 @@ class VoteButtons extends HTMLElement {
             <button type="button" class="btn btn-outline-danger btn-lg btn-block" id="vote-agree" onclick="vote(0)">Disagree</button>
           </div>
         </div>
+        <br>
       </div>
     `
   }
